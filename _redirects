@@ -1,0 +1,72 @@
+# Canonical root
+/index            /                   301
+/index.html       /                   301
+/home             /                   301
+/home/            /                   301
+
+# Canonical system page
+/System        /system/   301
+/System/       /system/   301
+
+# Canonical about
+/about.html       /about/             301
+/author           /about/             301
+/author/          /about/             301
+/dustin-thomas    /about/             301
+/Dustin-Thomas    /about/             301
+
+# Canonical starter kit (tools/templates)
+/starter-kit.html       /starter-kit/ 301
+/tools                  /starter-kit/ 301
+/tools/                 /starter-kit/ 301
+/toolkit                /starter-kit/ 301
+/toolkit/               /starter-kit/ 301
+/templates              /starter-kit/ 301
+/templates/             /starter-kit/ 301
+/lean-tools             /starter-kit/ 301
+/lean-tools/            /starter-kit/ 301
+/problem-solving-tools  /starter-kit/ 301
+/lean-problem-solving-tools /starter-kit/ 301
+
+# Method anchor helpers
+/lean-problem-solving   /#method       301
+/lean-problem-solving/  /#method       301
+/lean                   /#method       301
+
+# Lean Quest canonical slash
+/lean-quest             /lean-quest/   301
+
+# Book / buy vanity routes
+/book           https://www.amazon.com/Origin-Problem-Solving-Practical-Approach-ebook/dp/B0F8H9NCVV?ref_=ast_author_mpb 301
+/buy            https://www.amazon.com/Origin-Problem-Solving-Practical-Approach-ebook/dp/B0F8H9NCVV?ref_=ast_author_mpb 301
+/get-the-book   https://www.amazon.com/Origin-Problem-Solving-Practical-Approach-ebook/dp/B0F8H9NCVV?ref_=ast_author_mpb 301
+/amazon         https://www.amazon.com/Origin-Problem-Solving-Practical-Approach-ebook/dp/B0F8H9NCVV?ref_=ast_author_mpb 301
+
+# Newsletter and contact helpers
+/newsletter       /#newsletter         301
+/subscribe        /#newsletter         301
+
+# Housekeeping helpers
+/sitemap          /sitemap.xml         301
+/robots           /robots.txt          301
+
+# Remove defunct "download all" endpoints (clean up crawl errors)
+/download-all.zip     /starter-kit/    301
+/download-all         /starter-kit/    301
+/browse-tools         /starter-kit/    301
+
+# Safer redirects: include both ?tool= and #fragment
+/t/go-see https://www.originthinking.com/starter-kit/?tool=go-see&utm_source=book2e&utm_medium=print&utm_campaign=ops-tools&utm_content=chX-go-see#go-see 301
+/t/jdi https://www.originthinking.com/starter-kit/?tool=jdi&utm_source=book2e&utm_medium=print&utm_campaign=ops-tools&utm_content=chX-jdi#jdi 301
+/t/charter https://www.originthinking.com/starter-kit/?tool=charter&utm_source=book2e&utm_medium=print&utm_campaign=ops-tools&utm_content=chX-charter#charter 301
+/t/perception-builder https://www.originthinking.com/starter-kit/?tool=perception-builder&utm_source=book2e&utm_medium=print&utm_campaign=ops-tools&utm_content=chX-perception-builder#perception-builder 301
+/t/sipoc-lite https://www.originthinking.com/starter-kit/?tool=sipoc-lite&utm_source=book2e&utm_medium=print&utm_campaign=ops-tools&utm_content=chX-sipoc-lite#sipoc-lite 301
+/t/smart-target-poc https://www.originthinking.com/starter-kit/?tool=smart-target-poc&utm_source=book2e&utm_medium=print&utm_campaign=ops-tools&utm_content=chX-smart-target-poc#smart-target-poc 301
+/t/fishbone https://www.originthinking.com/starter-kit/?tool=fishbone&utm_source=book2e&utm_medium=print&utm_campaign=ops-tools&utm_content=chX-fishbone#fishbone 301
+/t/kpi-tree https://www.originthinking.com/starter-kit/?tool=kpi-tree&utm_source=book2e&utm_medium=print&utm_campaign=ops-tools&utm_content=chX-kpi-tree#kpi-tree 301
+/t/root-cause https://www.originthinking.com/starter-kit/?tool=root-cause&utm_source=book2e&utm_medium=print&utm_campaign=ops-tools&utm_content=chX-root-cause#root-cause 301
+/t/impact-vs-effort https://www.originthinking.com/starter-kit/?tool=impact-vs-effort&utm_source=book2e&utm_medium=print&utm_campaign=ops-tools&utm_content=chX-impact-vs-effort#impact-vs-effort 301
+/t/pilot-plan https://www.originthinking.com/starter-kit/?tool=pilot-plan&utm_source=book2e&utm_medium=print&utm_campaign=ops-tools&utm_content=chX-pilot-plan#pilot-plan 301
+/t/dap https://www.originthinking.com/starter-kit/?tool=dap&utm_source=book2e&utm_medium=print&utm_campaign=ops-tools&utm_content=chX-dap#dap 301
+/assets/downloads/origin-smart-target-and-point-of-cause-map.pdf   /assets/downloads/origin-smart-target-and-point-of-cause-map-small.pdf  301
+/t/smart-target-poc                                                /assets/downloads/origin-smart-target-and-point-of-cause-map-small.pdf   302

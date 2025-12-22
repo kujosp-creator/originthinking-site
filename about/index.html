@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About Dustin Thomas | Origin Problem Solving™</title>
+  <meta name="description" content="Dustin Thomas is an engineer, Lean consultant, and author of Origin Problem Solving™. He helps teams gain Clarity, Cause, and Control using a practical 8-step method." />
+  <meta name="author" content="Dustin Thomas">
+  <link rel="canonical" href="https://www.originthinking.com/about/">
+
+  <meta property="og:type" content="profile">
+  <meta property="og:profile:first_name" content="Dustin">
+  <meta property="og:profile:last_name" content="Thomas">
+  <meta property="og:url" content="https://www.originthinking.com/about/">
+  <meta property="og:title" content="About Dustin Thomas | Origin Thinking™">
+  <meta property="og:description" content="Continuous improvement consultant and engineer. Author of Origin Problem Solving™, an 8-step practical problem solving method.">
+  <meta property="og:image" content="../assets/img/000f7053-3657-4a63-b190-5c8258342d40.jpg">
+
+  <meta name="theme-color" content="#0b0b0b"/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link href="../styles.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --ops-orange: #CC5500;
+      --surface: #0f1216;
+      --muted: #94a3b8;
+      
+      /* POLAROID CALCS - DO NOT CHANGE */
+      --win-left:   15.0625%;
+      --win-right:  14.8438%;
+      --win-top:    20.1563%;
+      --win-bottom: 31.0938%;
+      --shadow: 0 12px 28px rgba(0,0,0,.5);
+      --shadow-sm: 0 8px 22px rgba(0,0,0,.4);
+    }
+
+    body {
+      background: #050608;
+      color: #e5e7eb;
+      font-family: "Inter", system-ui, -apple-system, sans-serif;
+    }
+
+    main {
+      padding: 32px 16px 64px;
+      overflow-x: hidden; /* Prevents scrollbar from rotated images */
+    }
+
+    /* --- Hero Section --- */
+    .about-hero {
+      text-align: center;
+      padding: 60px 0 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .about-hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3rem);
+      margin-bottom: 16px;
+      color: #f9fafb;
+      line-height: 1.1;
+    }
+
+    .about-hero p {
+      font-size: 1.1rem;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 32px;
+    }
+
+    .cta-group {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    /* --- Modern Pill Buttons --- */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 24px;
+      border-radius: 999px; /* Pill shape */
+      font-weight: 600;
+      text-decoration: none;
+      transition: filter 0.2s, transform 0.2s;
+    }
+
+    .btn-primary {
+      background-color: var(--ops-orange);
+      color: #050608;
+      border: 1px solid var(--ops-orange);
+    }
+    
+    .btn-primary:hover {
+      filter: brightness(1.1);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border: 1px solid rgba(148,163,184,0.5);
+      color: #e5e7eb;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--ops-orange);
+      color: var(--ops-orange);
+    }
+
+    /* --- THE POLAROIDS (Preserved) --- */
+    .collage {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 28px;
+      margin: 50px auto 80px;
+      align-items: start;
+      max-width: 1200px;
+      padding: 0 20px;
+    }
+
+    .polaroid {
+      position: relative;
+      overflow: hidden;
+      display: block;
+      box-shadow: var(--shadow);
+      transform-origin: center;
+      transition: transform .18s ease, box-shadow .18s ease;
+      cursor: pointer;
+    }
+
+    /* Rotation Logic */
+    .polaroid:nth-child(3n+1) { transform: rotate(-3deg); top: 4px; }
+    .polaroid:nth-child(3n+2) { transform: rotate( 2deg); top: -6px; }
+    .polaroid:nth-child(3n)   { transform: rotate(-1.2deg); top: 8px; }
+
+    .polaroid:hover {
+      transform: rotate(0) translateY(-4px) scale(1.05);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+      z-index: 10;
+    }
+
+    /* The Frame Logic */
+    .polaroid.real {
+      aspect-ratio: 88/107;
+      border-radius: 16px;
+      background: none;
+    }
+
+    .polaroid.real img {
+      position: absolute;
+      z-index: 1;
+      display: block;
+      border-radius: 6px;
+      object-fit: cover;
+      object-position: 50% 50%;
+      top: var(--win-top);
+      left: var(--win-left);
+      width: calc(100% - (var(--win-left) + var(--win-right)));
+      height: calc(100% - (var(--win-top) + var(--win-bottom)));
+      filter: sepia(10%) contrast(1.1); /* Slight vintage feel */
+    }
+    
+    .polaroid.real::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 16px;
+      pointer-events: none;
+      z-index: 2;
+      background: url("../assets/img/polaroid-frame-with-tape.png") no-repeat center/100% 100%;
+    }
+
+    /* --- Bio Content Layout --- */
+    .about-layout {
+      display: grid;
+      grid-template-columns: 1.8fr 1fr;
+      gap: 60px;
+      max-width: 1100px;
+      margin: 0 auto;
+      align-items: start;
+    }
+
+    .bio-content h2 {
+      color: #f9fafb;
+      margin-top: 0;
+      font-size: 2rem;
+    }
+
+    .bio-content p {
+      color: #cbd5e1;
+      line-height: 1.8;
+      margin-bottom: 24px;
+      font-size: 1.05rem;
+    }
+
+    .sidebar-card {
+      background: var(--surface);
+      border: 1px solid #2a2e35;
+      padding: 32px;
+      border-radius: 16px;
+      position: sticky;
+      top: 32px;
+    }
+
+    .sidebar-card h3 {
+      color: #f9fafb;
+      margin-top: 0;
+      margin-bottom: 20px;
+      font-size: 1.2rem;
+    }
+
+    .sidebar-links {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .sidebar-links .btn {
+      width: 100%;
+      box-sizing: border-box;
+      text-align: center;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .about-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .sidebar-card {
+        position: static;
+        margin-top: 24px;
+      }
+      .collage {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 16px;
+      }
+      /* Reduce rotation on mobile to save space */
+      .polaroid:nth-child(n) { transform: none; top: 0; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Dustin Thomas",
+    "url": "https://www.originthinking.com/about/",
+    "jobTitle": "Continuous Improvement Consultant & Author",
+    "affiliation": { "@type": "Organization", "name": "Origin Thinking, LLC" },
+    "sameAs": [
+      "https://www.youtube.com/@ORIGINproblemsolving",
+      "https://www.facebook.com/OriginProblemSolving"
+    ],
+    "authorOf": {
+      "@type": "Book",
+      "name": "Origin Problem Solving: The Practical Approach to Complex Problems",
+      "url": "https://www.originthinking.com/book"
+    }
+  }
+  </script>
+</head>
+
+<body>
+
+  <div id="home-top" aria-hidden="true"></div>
+  <div class="holiday-banner" role="status">⭐ Wishing you a season of clarity and continuous improvement. ⭐</div>
+
+  <header class="site-header">
+    <div class="wrap head-inner">
+      <div class="brand">
+        <a href="../" aria-label="Origin Problem Solving Home">
+          <span>Origin Problem Solving™</span>
+        </a>
+      </div>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+            <nav class="main-nav">
+        <div class="mobile-nav-intro" aria-hidden="true">
+          Menu · Scroll to see all
+        </div>
+        <a href="/#home-top" class="nav-link">Home</a>
+        <a href="/starter-kit/" class="nav-link toolkit-link">OPS Tools™</a>
+        <a href="/leadership-focus-deck/" class="nav-link ops-deck-link">OPS Leadership Focus Deck™</a>
+        <a href="/prove-loop/" class="nav-link">PROVE Loop™</a>
+        <a href="/system/" class="nav-link">Origin Thinking™ System</a>
+        <a href="/articles/" class="nav-link">Articles</a>
+        <a href="/about/" class="nav-link active" aria-current="page">About</a>
+        <a href="mailto:hello@originthinking.com" class="nav-link">Contact</a>
+        <a href="/buy" class="nav-link primary" target="_blank" rel="noopener">Buy Book</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    
+    <section class="about-hero">
+      <h1>About Dustin Thomas</h1>
+      <p>Continuous Improvement Consultant, Coach, and Author. I help leaders and teams move from chaos to <strong>Clarity, Cause, and Control</strong>.</p>
+      <div class="cta-group">
+        <a class="btn btn-primary" href="../buy" target="_blank" rel="noopener">Buy the Book</a>
+        <a class="btn btn-secondary" href="https://read.amazon.com/sample/B0FZL2XMKQ?clientId=share" target="_blank" rel="noopener">Read Sample</a>
+      </div>
+    </section>
+
+    <section class="collage" aria-label="Photo gallery">
+        <figure class="polaroid real"><img loading="lazy" alt="Dustin Thomas speaking" src="../assets/img/000f7053-3657-4a63-b190-5c8258342d40.jpg"></figure>
+        <figure class="polaroid real"><img loading="lazy" alt="Machine control panel" src="../assets/img/0646cff9-6a88-4a17-96df-cd8fec49d7e7.jpg"></figure>
+        <figure class="polaroid real"><img loading="lazy" alt="Presentation screen" src="../assets/img/speaking.png"></figure>
+        <figure class="polaroid real"><img loading="lazy" alt="Industrial piping" src="../assets/img/3248bd94-c61b-45cb-a188-55888666fd15.jpg"></figure>
+        <figure class="polaroid real"><img loading="lazy" alt="Lean process map" src="../assets/img/50a123a1-0461-4344-ada1-5d6ff4f49ce9.jpg"></figure>
+        <figure class="polaroid real"><img loading="lazy" alt="Team huddle" src="../assets/img/6057f26e-b6ab-41dc-8106-a32c991d63eb.jpg"></figure>
+        <figure class="polaroid real"><img loading="lazy" alt="Factory repairs" src="../assets/img/factory-repairs.jpg"></figure>
+        <figure class="polaroid real"><img loading="lazy" alt="Dustin at KPI board" src="../assets/img/60f01121-c88e-41ea-a997-60173ac394c0.jpg"></figure>
+        <figure class="polaroid real"><img loading="lazy" alt="A3 problem solving review" src="../assets/img/70f8420d-26ee-41d9-b979-74a05178e064.jpg"></figure>
+        <figure class="polaroid real"><img loading="lazy" alt="Engineering drawings" src="../assets/img/7373ecfc-ca32-4755-b5df-ac9a05bc28af.jpg"></figure>
+        <figure class="polaroid real"><img loading="lazy" alt="Virtual team meeting" src="../assets/img/lean-virtual-coffee-2025.png"></figure>
+        <figure class="polaroid real"><img loading="lazy" alt="Safety barrier tape" src="../assets/img/7a911866-e181-4a15-b5cc-bc0973bee996.jpg"></figure>
+        <figure class="polaroid real"><img loading="lazy" alt="Manufacturing process" src="../assets/img/9effaf9b-2a86-4d2e-9643-a09bec15ea79.jpg"></figure>
+        <figure class="polaroid real"><img loading="lazy" alt="Team huddle site" src="../assets/img/a9cbfd0e-6ca9-435f-a993-807fc058605b.jpg"></figure>
+        <figure class="polaroid real"><img loading="lazy" alt="Whiteboard notes" src="../assets/img/b38eb8cd-6bd3-4859-af3a-c51726b0cabe.jpg"></figure>
+        <figure class="polaroid real"><img loading="lazy" alt="Go and See walk" src="../assets/img/b9a84a33-3f6d-4778-a629-17b050cc2868.jpg"></figure>
+    </section>
+
+    <section class="about-layout">
+      <article class="bio-content">
+        <h2>Experience and Philosophy</h2>
+        <p>I am a continuous improvement consultant with nearly two decades of experience deploying practical operating systems, developing front-line leaders, and building cultures of daily problem solving. My background is in engineering, and I hold multiple improvement and project certifications, with a track record of measurable waste reduction and safer, smoother operations.</p>
+        <p>The core of my system, <strong>Origin Problem Solving™</strong>, is an <strong>8-step practical method</strong> that distills that experience into a repeatable process. We move teams from chaos to <strong>Clarity</strong> (Perception, Define), <strong>Cause</strong> (Break Down, Identify, Root Cause), and <strong>Control</strong> (Take Action, Monitor, Standardize).</p>
+        <p>My goal is simple: focus on measurable outcomes like safety, reliability, quality, and cost, rather than just chasing maturity scores or checking boxes.</p>
+      </article>
+
+      <aside class="sidebar-card">
+        <h3>Connect & Resources</h3>
+        <div class="sidebar-links">
+          <a class="btn btn-primary" href="../buy" target="_blank" rel="noopener">Buy on Amazon</a>
+          <a class="btn btn-secondary" href="https://www.youtube.com/@ORIGINproblemsolving" target="_blank" rel="noopener">YouTube Channel</a>
+          <a class="btn btn-secondary" href="https://www.facebook.com/OriginProblemSolving" target="_blank" rel="noopener">Facebook Page</a>
+          <a class="btn btn-secondary" href="../starter-kit/">Download Toolkit</a>
+        </div>
+      </aside>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <strong>Origin Thinking™</strong>
+          <small>© 2025 Origin Thinking, LLC. All rights reserved.</small>
+        </div>
+        <div class="footer-links">
+          <a href="../starter-kit/">Tools</a>
+          <a href="../buy" target="_blank" rel="noopener">Buy Book</a>
+          <a href="mailto:hello@originthinking.com" class="nav-link">Contact</a>
+        </div>
+      </div>
+      <div class="holiday-footer-msg">⭐ Wishing you a season of clarity and continuous improvement. ⭐</div>
+      <small class="tm-note" style="display:block; margin-top:16px; font-size:0.8rem; color: #999;">
+        Origin Problem Solving™, OPS Tools™, OPS Perception Builder™, OPS Leadership Focus Deck™, Origin Leadership Focus Deck™ and Origin Thinking™ are trademarks of Origin Thinking, LLC.
+      </small>
+    </div>
+  </footer>
+
+  <script src="../app.js" defer></script>
+</body>
+</html>

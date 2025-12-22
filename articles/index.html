@@ -1,0 +1,950 @@
+FILE: /articles/index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>OPS Stories &amp; Articles | Origin Problem Solving™</title>
+  <meta name="description" content="True stories and field notes from the front lines of problem solving. Real incidents, anonymized and simplified, that expand on Origin Problem Solving™ and show how Clarity, Cause, and Control look in practice.">
+  <meta name="author" content="Dustin Thomas">
+  <link rel="canonical" href="https://www.originthinking.com/articles/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Origin Problem Solving™">
+  <meta property="og:title" content="OPS Stories &amp; Articles | Origin Problem Solving™">
+  <meta property="og:description" content="True stories and field notes from the front lines of problem solving. Real incidents, anonymized and simplified, that expand on Origin Problem Solving™ and show how Clarity, Cause, and Control look in practice.">
+  <meta property="og:url" content="https://www.originthinking.com/articles/">
+  <meta property="og:image" content="https://www.originthinking.com/cover.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="OPS Stories &amp; Articles | Origin Problem Solving™">
+  <meta name="twitter:description" content="True stories and field notes from the front lines of problem solving. Real incidents, anonymized and simplified, that expand on Origin Problem Solving™ and show how Clarity, Cause, and Control look in practice.">
+  <meta name="twitter:image" content="https://www.originthinking.com/cover.png">
+
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#CC5500">
+  <link rel="apple-touch-icon" href="/assets/icons/icon-192.png">
+  <link rel="icon" href="/cover.png" type="image/png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link href="/styles.css" rel="stylesheet">
+
+  <!-- Articles page layout only, no content changes -->
+  <style>
+    .articles-page main.wrap {
+      padding-top: 40px;
+      padding-bottom: 80px;
+    }
+
+    .articles-page .hero {
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 40px;
+    }
+
+    .articles-page .hero-sub {
+      color: var(--muted);
+    }
+
+    .articles-page .article-container {
+      display: grid;
+      grid-template-columns: minmax(0, 260px) minmax(0, 1fr);
+      gap: 40px;
+      align-items: flex-start;
+      margin-bottom: 60px;
+    }
+
+    .articles-page .toc {
+      position: sticky;
+      top: 96px;
+      background: var(--surface);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      padding: 16px 18px;
+      font-size: 0.9rem;
+    }
+
+    .articles-page .toc h3 {
+      margin: 0 0 10px;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+    }
+
+    .articles-page .toc ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .articles-page .toc li {
+      margin-bottom: 6px;
+    }
+
+    .articles-page .toc a {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 8px;
+      border-radius: 6px;
+      text-decoration: none;
+      color: var(--fg);
+      font-size: 0.9rem;
+    }
+
+    .articles-page .toc a span {
+      opacity: 0.6;
+    }
+
+    .articles-page .toc a:hover,
+    .articles-page .toc a:focus-visible {
+      background: rgba(255, 255, 255, 0.06);
+      outline: none;
+    }
+
+    .articles-page .articles-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+    }
+
+    .articles-page article {
+      max-width: 720px;
+    }
+
+    .articles-page .article-meta {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .articles-page article h2 {
+      margin-top: 0;
+      margin-bottom: 8px;
+    }
+
+    .articles-page article h3 {
+      margin-top: 32px;
+      margin-bottom: 8px;
+    }
+
+    .articles-page article p {
+      line-height: 1.7;
+    }
+
+    .articles-page article ul {
+      padding-left: 1.2rem;
+      margin-bottom: 16px;
+    }
+
+    .articles-page .section-alt.install-app {
+      margin-top: 40px;
+    }
+
+    @media (max-width: 900px) {
+      .articles-page .article-container {
+        display: block;
+      }
+
+      .articles-page .toc {
+        position: static;
+        margin-bottom: 24px;
+      }
+    }
+  </style>
+</head>
+<body class="articles-page">
+  <div class="holiday-banner" role="status">🎄 Merry Christmas from Origin Thinking™ 🎄</div>
+
+  <header class="site-header">
+    <div class="wrap head-inner">
+      <div class="brand">
+        <a href="/" style="text-decoration:none; color:inherit;">Origin Problem Solving™</a>
+      </div>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="main-nav">
+        <div class="mobile-nav-intro" aria-hidden="true">
+          Menu · Scroll to see all
+        </div>
+        <a href="/#home-top" class="nav-link">Home</a>
+        <a href="/starter-kit/" class="nav-link toolkit-link">OPS Tools™</a>
+        <a href="/leadership-focus-deck/" class="nav-link ops-deck-link">OPS Leadership Focus Deck™</a>
+        <a href="/prove-loop/" class="nav-link">PROVE Loop™</a>
+        <a href="/system/" class="nav-link">Origin Thinking™ System</a>
+        <a href="/articles/" class="nav-link active" aria-current="page">Articles</a>
+        <a href="/about/" class="nav-link">About</a>
+        <a href="mailto:hello@originthinking.com" class="nav-link">Contact</a>
+        <a href="/buy" class="nav-link primary" target="_blank" rel="noopener">Buy Book</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <section class="hero" style="padding: 60px 0 20px;">
+      <h1>OPS Stories &amp; Articles</h1>
+      <p class="hero-sub">Field notes from the front lines of problem solving.</p>
+      <p style="color:var(--muted); max-width:600px;">
+        Real incidents, anonymized and simplified. These pieces expand on
+        <em>Origin Problem Solving™</em> and show how the method moves teams from chaos to Clarity, Cause, and Control.
+      </p>
+    </section>
+
+    <div class="article-container">
+    
+      <nav class="toc" aria-label="Table of Contents">
+        <h3>In this collection</h3>
+        <ul>
+          <li>
+            <a href="#thirty-two-hours">What Would You Do With 32 Hours a Month Back? <span>↓</span></a>
+          </li>
+          <li>
+            <a href="#impossible-ask">Solving the Impossible Ask: One Slice, One Standard, Repeat <span>↓</span></a>
+          </li>
+          <li>
+            <a href="#react-after-failure">We React After the Failure <span>↓</span></a>
+          </li>
+          <li>
+            <a href="#near-miss">A Near-Miss, a Saw Blade, and the Standard Behind It <span>↓</span></a>
+          </li>
+          <li>
+            <a href="#trailer-fire">Trailer Fire: From Crisis to Process <span>↓</span></a>
+          </li>
+          <li>
+            <a href="#missing-link">The Missing Link in Lean: Middle Management <span>↓</span></a>
+          </li>
+          <li>
+            <a href="#when-fix-isnt-in-the-conference-room">When the Fix Isn’t in the Conference Room <span>↓</span></a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="articles-stack">
+
+        <article id="thirty-two-hours">
+  <h2>What Would You Do With 32 Hours a Month Back?</h2>
+  <div class="article-meta">By Dustin Thomas · December 11, 2025</div>
+
+  <p><em>
+    Trade a short, focused improvement for recurring waste. Go and See, remove the variation,
+    lock a simple standard, then measure the hours returned and reinvest them.
+  </em></p>
+
+  <p><em>
+    Editor’s note: Based on a real incident; nonessential details were changed to protect privacy.
+    Adapted from Origin Problem Solving.
+  </em></p>
+
+  <p>I kept hearing the same thing: “We don’t have time to fix it.”</p>
+  <p>So we took 3 days and fixed it.</p>
+
+  <h3>The situation</h3>
+  <p>
+    On a product design team, we were slipping in small, annoying ways, little delays and rework everyone hated.
+    A repetitive build step in our design flow kept dragging us down. Nobody “had time” to fix it, so we tolerated it.
+  </p>
+
+  <h3>What we did (and didn’t do)</h3>
+  <p>
+    No retreat. No week of meetings. We ran a concentrated 3-day Kaizen with short, focused huddles,
+    one A3 to keep us honest. We stayed at the work, not in a conference room.
+  </p>
+
+  <p>During the event we:</p>
+  <ul>
+    <li>Found the root cause.</li>
+    <li>Mapped the step exactly as done, no hero stories, just reality.</li>
+    <li>Built a shared cell library and a minimum viable standard for how and when to use it.</li>
+    <li>Rolled it across similar design work so the fix stuck.</li>
+  </ul>
+
+  <p>
+    Once we could see what people actually did, the pattern was obvious:
+    same outcome, different methods. Variation was the problem, not effort.
+    One shared, reusable library solved it.
+  </p>
+
+  <h3>The result</h3>
+  <p>
+    That 2-hour step now takes about 1 minute. Across the team,
+    that returned ~32 hours per month. Same people. Same tools. Different discipline.
+  </p>
+
+  <p>
+    Here’s the point most folks miss: a short, concentrated effort will often give you far more time back than it costs.
+    “We don’t have time” is usually a symptom. Fixing the work creates the time.
+  </p>
+
+  <h3>How to copy this next week</h3>
+  <ul>
+    <li>Collect the issues. Put real symptoms on a whiteboard.</li>
+    <li>Prioritize one. Write a clear Problem Perception statement (Clarity).</li>
+    <li>Run a 1–5 day Kaizen. Go and See, confirm cause, test countermeasure (Cause).</li>
+    <li>Lock it in. Standardize the win and set the sustainment so it holds (Control).</li>
+    <li>Track hours returned. Reinvest them into the next item on the board.</li>
+  </ul>
+
+  <p>
+    Clarity → Cause → Control: see the work as it is,
+    remove the variation that causes the waste,
+    then lock it in with a simple standard you can audit.
+  </p>
+
+  <a href="#home-top" class="back-link">↑ Back to Top</a>
+</article>
+<article id="impossible-ask">
+  <h2>Solving the Impossible Ask: One Slice, One Standard, Repeat</h2>
+  <div class="article-meta">By Dustin Thomas · December 18, 2025</div>
+
+  <p><em>
+    If you had four weeks and 1–2 hours a week to save $1M, would you go big or start small?
+  </em></p>
+
+  <p><em>
+    Editor’s note: This account is based on a true event; details edited for anonymity.
+    Adapted from Origin Problem Solving by Dustin Thomas.
+  </em></p>
+
+  <p>
+    The brief was simple and a little “wait, what?”:
+    save a million dollars, four weeks, one hour per week, before construction kickoff.
+  </p>
+
+  <h3>The brief to the breakdown</h3>
+  <p>
+    We Paretoed the pain points across the multi-site build.
+    There was plenty of noise. Some big-dollar items we didn’t control.
+    Some smaller levers we did.
+  </p>
+
+  <p>
+    What rose to the top wasn’t glamorous.
+    It was how on-site materials were ordered, dropped, issued, returned, and replenished.
+  </p>
+
+  <p>
+    We picked a small, low-dollar $40k lever to pilot.
+    That choice made me nervous.
+    When the ask is seven figures, choosing a modest slice feels wrong.
+    But it was the slice we could prove fast.
+  </p>
+
+  <h3>Built with the contractor</h3>
+  <p>
+    Crucial move: we brought in the general contractor and site supers,
+    the people who move pallets, break wrap, and live with the consequences.
+    We didn’t roll out a fix. We co-designed the system and wrote it into how the work runs.
+  </p>
+
+  <p>We rebuilt five basics together:</p>
+  <ul>
+    <li>Order to a standard.</li>
+    <li>Stage to the work.</li>
+    <li>Issue and return in seconds.</li>
+    <li>Replenish on a signal.</li>
+    <li>Make it visible.</li>
+  </ul>
+
+  <h3>What happened</h3>
+  <p>
+    The pilot worked.
+    We then shared the same system across on-site inventory management.
+    By year’s end, the run-rate impact was about $1.5M in savings.
+  </p>
+
+  <p>
+    The contractor kept the method as their standard
+    and told us future bids would come in lower
+    because material flow was predictable.
+  </p>
+
+  <h3>Why it worked (Clarity → Cause → Control)</h3>
+  <p><strong>Clarity:</strong> Pareto the problem, then pick a lever you actually control.</p>
+  <p><strong>Cause:</strong> Go to the site and fix the condition, not the complaint.</p>
+  <p><strong>Control:</strong> Bake the checks into routine management and contracts.</p>
+
+  <p>
+    That’s the rhythm in Origin Problem Solving:
+    define precisely, prove it at the source,
+    and make it hold under real conditions
+    with the people who touch the work.
+  </p>
+
+  <a href="#home-top" class="back-link">↑ Back to Top</a>
+</article>
+
+        <!-- 1. We React After the Failure -->
+        <article id="react-after-failure">
+          <h2>We React After the Failure</h2>
+          <div class="article-meta">By Dustin Thomas · November 13, 2025</div>
+
+          <p><em>Would today’s fire exist if we had gone to see yesterday?</em></p>
+          <p>
+            <em>
+              In <strong>Origin Problem Solving</strong> (2024), I share a difficult story, “Death of a Friend,”
+              and what it taught me about the cost of reactive problem solving. In this article, I add a few more lessons
+              on moving from reaction to daily prevention.
+            </em>
+          </p>
+          <p><em>Adapted from Origin Problem Solving (2024) by Dustin Thomas.</em></p>
+
+          <h3>The trap</h3>
+          <p>Not long ago I asked a middle manager, “What do you do, day to day?”</p>
+          <p>“Operating reviews,” he said. “They set the tone.”</p>
+          <p>“Then what?”</p>
+          <p>“We go target problem areas and execute.”</p>
+          <p>“And you, as a manager, what do you actually do?”</p>
+          <p>“I run meetings.”</p>
+          <p>
+            That is the trap. It looks busy, feels urgent, and produces decks, but it waits for harm and then responds.
+            In safety, quality, and reliability, waiting for harm is how you miss.
+          </p>
+
+          <h3>Reactive problem solving is a lagging control</h3>
+          <p>
+            Reactive loops start with an adverse event: injury, outage, defect. Then the root cause analysis,
+            action items, and follow ups kick in. By design, they spin only after damage exists. Fine for post mortems.
+            Not fine as a management system.
+          </p>
+
+          <h3>Five signs you are stuck in reaction</h3>
+          <ul>
+            <li>Your strongest metrics are lagging.</li>
+            <li>Reviews center on “What happened?” more than “What is about to happen?”</li>
+            <li>
+              Action logs close symptoms (patches, reminders, emails) instead of causes
+              (design, method, training standards, sustainment, controls).
+            </li>
+            <li>Leaders spend more time in rooms and email than at the work.</li>
+            <li>Improvements show up as one offs, not as standards that prevent recurrence.</li>
+          </ul>
+
+          <h3>The shift: from incident response to risk discovery</h3>
+          <p>You do not need more meetings. You need a daily system that discovers risk before it bites.</p>
+          <ul>
+            <li>
+              Put eyes on the work (Go and See). Block non-negotiable leader time at the point of work with a short script,
+              not a sightseeing tour.
+            </li>
+            <li>
+              Replace “updates” with triggers. Define clear escalation triggers that force action before failure:
+              backlog age &gt; X, torque out of range, clearance red, near miss count ≥ Y, first pass yield below target,
+              procedure steps skipped.
+            </li>
+            <li>
+              Standardize manager work, not just operator work. Leader Standard Work, times, routes, checks,
+              and follow ups, makes risk visible daily and auditable. If it is optional, it will not happen when the day gets noisy.
+            </li>
+            <li>
+              Layered process audits that teach. Short, rotating checks on the critical few behaviors that control outcome.
+              LPAs verify the standard exists, is used, and still works, then harvest learning to improve the standard.
+            </li>
+            <li>
+              Kata beats heroics. Use Coaching Kata to keep improvement scientific and bite sized:
+              grasp current, set target, see obstacles, run one step, learn. Managers coach. Teams own.
+            </li>
+            <li>
+              Fix design over discipline. If a procedure requires memory under stress, the design is weak.
+              Error proof the method, tool, or interface so the right way is easy and the wrong way is hard to do unnoticed.
+            </li>
+          </ul>
+
+          <h3>Redesign the operating review</h3>
+          <p>Stop performing a post game show. Make it a pre failure control room.</p>
+          <ul>
+            <li>5 minutes: leading signals, today’s triggers, constraints, predicted hot spots.</li>
+            <li>5 minutes: decisions, remove constraints per area, one owner, one due date.</li>
+            <li>5 minutes: learning, what a Go and See found yesterday, what standard changed today.</li>
+          </ul>
+
+          <h3>The punchline</h3>
+          <p>
+            Reactive problem solving is necessary, but it is not the best or only way to solve problems.
+            Build discovery in. Then operating reviews finally set the tone for the day, because the day stops being a surprise.
+          </p>
+
+          <div class="ops-takeaway">
+            <h3>OPS Summary</h3>
+            <ul>
+              <li>
+                <strong>Best OPS Tools™ for this story:</strong>
+                <a href="/assets/downloads/OPS_Perception_Builder_Step01.pdf">OPS Perception Builder™</a> and
+                <a href="/assets/downloads/origin-smart-target-and-point-of-cause-map-small.pdf">
+                  SMART Target &amp; Point of Cause Map
+                </a>
+                to define leading signals and triggers before incidents.
+              </li>
+              <li>
+                <strong>System link:</strong>
+                See how PROVE Loop™ and Tier 2 Help Chain turn those triggers into a daily routine on the
+                <a href="/system/">Origin Thinking™ system page</a>.
+              </li>
+            </ul>
+          </div>
+
+          <a href="#home-top" class="back-link">↑ Back to Top</a>
+        </article>
+
+        <!-- 2. A Near-Miss, a Saw Blade, and the Standard Behind It -->
+        <article id="near-miss">
+          <h2>A Near-Miss, a Saw Blade, and the Standard Behind It</h2>
+          <div class="article-meta">By Dustin Thomas · November 20, 2025</div>
+
+          <p>
+            <em>
+              At the job site, under pressure, when the easy move is to blame a person and move on, what do you do?
+            </em>
+          </p>
+          <p>
+            <em>
+              There is another way. This story shows the other path: Go and See, check the standard,
+              fix the work and the standard. Read it and think about the last time discipline replaced
+              finding the true root cause.
+            </em>
+          </p>
+          <p>
+            <em>
+              Editor’s note: This account is based on a true event; details edited for anonymity.
+              Adapted from Origin Problem Solving by Dustin Thomas.
+            </em>
+          </p>
+
+          <p>
+            What decides whether we get lucky or get hurt can be the presence and quality of the standard.
+          </p>
+          <p>
+            On a renovation job, a saw hit an underground electrical line. No injuries, thank God, but it could
+            have gone the other way. Blame flared fast: the worker who followed instructions, the project manager,
+            the GPR tech who scanned days earlier. I have seen this movie end with discipline all around and no change to the system.
+          </p>
+          <p>We chose a better path.</p>
+
+          <h3>What we did instead: Go and See</h3>
+          <p>
+            We left the conference room and went to the point of work. With the standards in hand, things cleared up fast:
+          </p>
+          <ul>
+            <li>
+              The GPR request form looked “detailed” on paper but was vague in practice. No precise dig area,
+              no required marks or photos, no pre job verification step.
+            </li>
+            <li>Last minute plan changes never flowed to the GPR request.</li>
+            <li>Visual controls were weak. Markings faded, and there was no layered check before cutting.</li>
+            <li>None of this pointed to a “bad” person. It pointed to an inadequate standard and a lack of control.</li>
+          </ul>
+
+          <h3>What changed (and stuck)</h3>
+          <p>We rewrote the working rules and raised the baseline:</p>
+          <ul>
+            <li>Tightened the GPR request.</li>
+            <li>Added a pre cut Go and See step.</li>
+            <li>Standardized visuals and layered checks.</li>
+            <li>Captured the lesson in the standard.</li>
+          </ul>
+          <p>Result: a steadier job site, fewer stoppages, and an incident that did not repeat.</p>
+
+          <h3>The principle that saved the day</h3>
+          <p>
+            You can not have a problem unless you have a standard. If you do not define the best known method,
+            all you have is opinion. If you define it and keep improving it, problems become visible, solvable, and preventable.
+          </p>
+
+          <h3>Why this matters</h3>
+          <p>
+            At the job site, under pressure, when the easy move is to blame a person and move on, you need to choose to be different.
+            Do the right thing and solve the true cause.
+          </p>
+          <p><strong>Clarity:</strong> everyone is solving the same problem.</p>
+          <p><strong>Cause:</strong> verified with facts at the point of work.</p>
+          <p><strong>Control:</strong> today’s fix does not fade into tomorrow’s memory.</p>
+
+          <div class="ops-takeaway">
+            <h3>OPS Summary</h3>
+            <ul>
+              <li>
+                <strong>Best OPS Tools™ for this story:</strong>
+                <a href="/assets/downloads/origin-sipoc-lite.pdf">SIPOC Lite</a> to clarify the GPR request process,
+                and
+                <a href="/assets/downloads/origin-fishbone-template.pdf">Fishbone Diagram</a>
+                to capture causes in the standard instead of in memory.
+              </li>
+              <li>
+                <strong>System link:</strong>
+                Use PROVE Loop™ on your Tier 1 board so the new pre cut checks and visuals are verified daily.
+                See the <a href="/system/">Origin Thinking™ system page</a> for how the loop works.
+              </li>
+            </ul>
+          </div>
+
+          <a href="#home-top" class="back-link">↑ Back to Top</a>
+        </article>
+
+        <!-- 3. Trailer Fire: From Crisis to Process -->
+        <article id="trailer-fire">
+          <h2>Trailer Fire: From Crisis to Process</h2>
+          <div class="article-meta">By Dustin Thomas · November 25, 2025</div>
+
+          <p><em>How often has a write up improved a process?</em></p>
+          <p>
+            <em>
+              Write ups buy compliance through fear and kill the facts you need to rebuild the process.
+              If you want the issue solved, remove the fear, go and see, and fix the standard so the change sticks.
+            </em>
+          </p>
+          <p>
+            <em>
+              Editor’s note: This account is based on a true event; details edited for anonymity.
+              Adapted from Origin Problem Solving by Dustin Thomas.
+            </em>
+          </p>
+
+          <p>
+            A wheel bearing failed on a blistering summer day. The trailer caught fire. When the flames were out,
+            only a black outline of a semi remained. No injuries (thank God), but fear moved in fast: blame, discipline,
+            fallout across multiple departments. A union teammate was at the center, speaking through representation.
+            Tension was thick and everyone braced for the worst.
+          </p>
+          <p>We chose a different path.</p>
+
+          <h3>What happened next</h3>
+          <p>
+            Two safety consultants, Daniel Tate and Zachary Cooper, and I (in the Lean role) brought everyone together.
+            The goal was not to blame. It was to understand the process.
+          </p>
+          <p>
+            That first meeting was fragile. Instead of “Who messed up?”, we asked, “What is the standard?
+            Is it clear? Is it reachable under these conditions?” The atmosphere began to shift. Without accusations,
+            we received facts. Our union colleague opened up and became central to reconstructing events and understanding procedures.
+            Fleet stepped down from a defensive posture. Supply Chain leaned in to help.
+          </p>
+          <p>
+            The next sessions kept the same structure: learn what happened, improve the system,
+            and do not make a spectacle of the people who were in the middle of it, but instead treat them as the key witnesses
+            with the best knowledge for permanent resolutions.
+          </p>
+          <p>
+            We stabilized the immediate risks, walked the sequence step by step, and made the standards the subject.
+            That gave us options we could not see when everyone was protecting a position. Curiosity beat fear.
+          </p>
+
+          <h3>Why this became a turning point</h3>
+          <p>
+            The culture moved a notch. By centering on the process, trust went up and noise went down.
+            People volunteered what they knew because they saw it used to fix the work, not to punish the worker.
+            Meetings got shorter and clearer. The next time something went sideways, no one froze or fought. We had a way to respond.
+          </p>
+          <p>
+            This is the point: the specifics of each countermeasure fade over time, but the capability you build by handling a crisis
+            this way does not. You create a team that can think under pressure.
+          </p>
+
+          <h3>How we worked (without the drama)</h3>
+          <p>
+            We stabilized first. We made the standard visible. The person closest to the work helped reconstruct the sequence
+            and shape the fix. Then we protected the improvement by building the check into routine management so it would not
+            rely on memory or heroics.
+          </p>
+
+          <h3>The takeaway</h3>
+          <p>
+            This was not luck. It was a choice to stay curious under pressure, make the process the subject,
+            and let the people who live the work help fix it.
+          </p>
+
+          <div class="ops-takeaway">
+            <h3>OPS Summary</h3>
+            <ul>
+              <li>
+                <strong>Best OPS Tools™ for this story:</strong>
+                Use the <a href="/assets/downloads/origin-charter-template.pdf">Origin Charter Template</a>
+                and <a href="/assets/downloads/origin-detailed-action-plan.pdf">Detailed Action Plan</a>
+                to structure cross functional crisis work so it outlives the incident.
+              </li>
+              <li>
+                <strong>Protect the gain:</strong>
+                Build your checks into management with the
+                <a href="/assets/downloads/kaizen-audit-form.pdf">Kaizen Audit Form</a>
+                so the new standards are verified, not assumed.
+              </li>
+              <li>
+                <strong>System link:</strong>
+                Route repeat risks into Tier 2 Help Chain and PROVE Loop™ so they are owned at the right level.
+                See the <a href="/system/">Origin Thinking™ system page</a> for how the tiers connect.
+              </li>
+            </ul>
+          </div>
+
+          <a href="#home-top" class="back-link">↑ Back to Top</a>
+        </article>
+
+        <!-- 4. The Missing Link in Lean: Middle Management -->
+        <article id="missing-link">
+          <h2>The Missing Link in Lean: Middle Management</h2>
+          <div class="article-meta">By Dustin Thomas · November 30, 2025</div>
+
+          <p><em>When your calendar is full of reviews and updates, are you leading a system?</em></p>
+          <p>
+            <em>
+              Make the process the subject: write your leader standard work as it is, then spend roughly a third of your time
+              at the point of work verifying standards and coaching supervisors. Turn daily gaps into small experiments and
+              lock the wins into routine checks so problems stop stacking.
+            </em>
+          </p>
+          <p>
+            <em>
+              By Dustin Thomas, Author of Origin Problem Solving: The Lean Approach to Complex Problems.
+            </em>
+          </p>
+
+          <h3>The story</h3>
+          <p>Not long ago, I asked a middle manager a simple question:</p>
+          <p>“What do you do on a day to day basis?”</p>
+          <p>He said, “I attend operating reviews. They set the tone and direction for the day.”</p>
+          <p>“Okay. Then what?”</p>
+          <p>“Then we go out and target the areas that need attention and execute where we need to execute.”</p>
+          <p>“Right, but what do you actually do as a manager?”</p>
+          <p>He paused. “I hold a variety of meetings.”</p>
+          <p>That was it.</p>
+          <p>
+            Weeks later, I told this story to someone else. He laughed: “He is not setting direction, he is chasing fires.
+            Every day is a new one. He is solving issues four days old while today is already blowing up.”
+          </p>
+          <p>What we call management has drifted into fire control.</p>
+
+          <h3>The real problem</h3>
+          <p>
+            Middle managers are stuck reacting. They manage symptoms, not systems. Days fill with reviews, updates,
+            and meetings that at best document problems instead of stabilizing them.
+          </p>
+          <p>
+            By the time they circle back to Monday’s issue, three new “top priorities” have arrived.
+            Urgent wins. Important waits.
+          </p>
+          <p>We taught them to work this way.</p>
+          <p>
+            In many Lean deployments, we train the front line to see waste and ask executives to sponsor the change,
+            then skip the layer in between, the clay layer everything rests on.
+          </p>
+
+          <h3>Where the change has to happen</h3>
+          <p>
+            Front line employees do not need to become Lean experts. They need access, permission, and support to improve
+            the work they already know best.
+          </p>
+          <p>
+            Executives do not need to be on the floor every hour. They need visibility and confidence in a system that
+            links daily work to strategic goals.
+          </p>
+          <p>The middle layer is where Lean either lives or dies.</p>
+          <p>
+            Managers must become disciplined problem solving practitioners. Their job: coach, enable small experiments,
+            and stabilize processes before scaling improvements.
+          </p>
+          <p>
+            A large share of their time, 30–40 percent, should go to verifying standards, observing process adherence,
+            and developing supervisors through structured feedback.
+          </p>
+
+          <h3>From periodic to daily</h3>
+          <p>
+            Many organizations still run on periodic problem solving. A few projects each year, often led by a Lean office,
+            deliver results, check boxes, and move on.
+          </p>
+          <p>It is a start. It is not maturity.</p>
+          <p>Daily problem solving is the next step and it only happens when middle managers own it.</p>
+          <ul>
+            <li>Supervisors and crews run daily experiments to close performance gaps.</li>
+            <li>Managers review patterns weekly and invest half their time in coaching and removing barriers.</li>
+            <li>Leaders above them review trends monthly.</li>
+            <li>Executives focus on annual targets.</li>
+          </ul>
+
+          <h3>Building trust through standards</h3>
+          <p>
+            Coaching in chaos does not work. Middle managers need a clear rhythm, and that starts with Leader Standard Work,
+            not the idealized version, the honest one.
+          </p>
+          <p>Before we improve leadership behavior, we need to see it as it is:</p>
+          <ul>
+            <li>What meetings exist now?</li>
+            <li>How is time actually spent?</li>
+            <li>What is being checked, and what is ignored?</li>
+          </ul>
+          <p>
+            Write it down. Standardize the current state, especially if it is ugly.
+            Once you can see the pattern, you can improve it.
+          </p>
+          <p>Then layer in audits and assessments, not as “gotcha” checks, but as structured conversations:</p>
+          <ul>
+            <li>What result are you trying to achieve here?</li>
+            <li>What is happening right now at this location?</li>
+            <li>Where is it off standard, and why?</li>
+            <li>What one concrete step will you take next, and when will we check what you learned?</li>
+          </ul>
+          <p>
+            These questions surface reality and align crews, supervisors, and managers.
+            Over time, people start to see and solve problems systematically.
+          </p>
+
+          <h3>The shift</h3>
+          <p>
+            When middle managers learn to see variation, coach scientific thinking,
+            and reinforce stability through standard work, the system changes.
+          </p>
+          <ul>
+            <li>Problems stop stacking.</li>
+            <li>Supervisors stop firefighting.</li>
+            <li>Executives stop micromanaging.</li>
+          </ul>
+          <p>
+            That is how we move from periodic, staff driven Lean to daily, embedded Lean
+            owned by the people who run the business, not by a department that reports on it.
+          </p>
+          <p>
+            In Origin Problem Solving, I describe this as moving from Clarity (seeing the work) to Cause
+            (understanding variation) to Control (stabilizing systems). The sequence applies to leadership
+            as much as it does to the book’s focus, which is process improvement.
+          </p>
+          <p>When managers apply problem solving to their own work first, they create the conditions for everyone else to do the same.</p>
+
+          <h3>The outcome</h3>
+          <p>
+            We build trust through structure. When daily, weekly, and monthly routines are predictable,
+            upper leadership can step back without losing control.
+          </p>
+          <p>Middle managers become stabilizers. Supervisors become coaches. Employees become problem solvers.</p>
+          <p>
+            That is maturity: not more meetings or more reviews, but a steady cadence of clarity, cause,
+            and control built into every level of work.
+          </p>
+
+          <div class="ops-takeaway">
+            <h3>OPS Summary</h3>
+            <ul>
+              <li>
+                <strong>Best OPS Tools™ for this story:</strong>
+                <a href="/assets/downloads/origin-problem-breakdown-kpi-tree.pdf">Problem Breakdown &amp; KPI Tree</a>
+                to connect manager work to results, and
+                <a href="/assets/downloads/origin-detailed-action-plan.pdf">Detailed Action Plan</a>
+                to rewrite Leader Standard Work from reality instead of wish lists.
+              </li>
+              <li>
+                <strong>System link:</strong>
+                Use PROVE Loop™ at Tier 1 and the Tier 2 Help Chain to make middle manager coaching and checks visible,
+                not invisible calendar clutter. See the <a href="/system/">Origin Thinking™ system page</a>.
+              </li>
+            </ul>
+          </div>
+
+          <a href="#home-top" class="back-link">↑ Back to Top</a>
+        </article>
+
+        <!-- 5. When the Fix Isn’t in the Conference Room -->
+        <article id="when-fix-isnt-in-the-conference-room">
+          <h2>When the Fix Isn’t in the Conference Room</h2>
+          <div class="article-meta">By Dustin Thomas · December 4, 2025</div>
+
+          <p><em>How often has another meeting changed what really happens at the point of work?</em></p>
+          <p><em>Leave the room, observe, listen.</em></p>
+          <p>
+            <em>
+              Editor’s note: Based on a real incident; nonessential details were changed to protect privacy.
+              Adapted from Origin Problem Solving.
+            </em>
+          </p>
+
+          <h3>The story</h3>
+          <p>
+            We were flooding the warehouse with odd lot. Coated paperboard kept coming off the line with wrinkles.
+            Meetings multiplied, theories flew, nothing stuck. The late night calls kept coming.
+          </p>
+          <p>So I did the one thing I had not done well: I went to the Gemba.</p>
+
+          <h3>Go to the machine, not the memory</h3>
+          <p>
+            Instead of debating in a room, we stood at the coater during start up, asked some questions of the operator
+            and together we watched. The operator had not been able to operate and watch but I followed his lead and
+            instruction and watched for him. That is where a thread began to show itself: during the sequence,
+            one end of the applicator touched down a hair early. That tiny asymmetry created a bead in the coating at one end
+            and the downstream wrinkle we were chasing soon showed itself.
+          </p>
+          <p>
+            While asking questions to understand, I also learned there is an adjustment wheel under twenty years of coating.
+            Hidden to me, not to the operator.
+          </p>
+          <p>
+            Observe first. Listen. Speak second. That moment changed more than a defect rate;
+            it reset how I thought and how I approached issues.
+          </p>
+
+          <h3>What we did differently (and why it worked)</h3>
+          <ul>
+            <li>Observed real conditions. Not to command or to control but to listen and understand.</li>
+            <li>
+              Respect for people. Acknowledging workers’ expertise in their processes and respecting their insights is not
+              only what is deserved, but it is essential.
+            </li>
+            <li>
+              Fixed the cause, then protected the fix. Cleaned and indexed the adjustment, verified parallelism at contact,
+              and documented the check in the start up standard.
+            </li>
+          </ul>
+
+          <h3>Why this story is in the book</h3>
+          <p>
+            Chapter 2 of Origin Problem Solving shows that durable improvement comes from small, disciplined changes built
+            on real observation, not slogans. The wrinkle story is a clear example: one overlooked contact sequence, one bead,
+            one standard that needed to be made visible and verified, found only because I went to the Gemba to listen.
+          </p>
+
+          <div class="ops-takeaway">
+            <h3>OPS Summary</h3>
+            <ul>
+              <li>
+                <strong>Best OPS Tools™ for this story:</strong>
+                Map the flow at the machine with
+                <a href="/assets/downloads/origin-sipoc-lite.pdf">SIPOC Lite</a> and capture causes in real time with the
+                <a href="/assets/downloads/origin-root-cause-analysis.pdf">Root Cause Analysis worksheet</a>.
+              </li>
+              <li>
+                <strong>System link:</strong>
+                Turn the new contact check into a PROVE Loop™ metric on your Tier 1 board so it does not fade back into memory.
+                See the <a href="/system/">Origin Thinking™ system page</a> for how PROVE Loop™ holds the gain.
+              </li>
+            </ul>
+          </div>
+
+          <a href="#home-top" class="back-link">↑ Back to Top</a>
+        </article>
+
+      </div>
+
+    </div>
+
+    <section class="section-alt install-app" style="text-align:center; padding: 80px 0;">
+      <div class="wrap">
+        <h2>Read more in the book</h2>
+        <p style="color:var(--muted); max-width:600px; margin:0 auto 30px;">
+          These stories and lessons are excerpted from <em>Origin Problem Solving™</em> (2nd Edition).
+          The book breaks down exactly how to use these lessons to build your own system.
+        </p>
+        <a class="btn primary big" href="/buy" target="_blank" rel="noopener">Get the Book on Amazon</a>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="/app.js" defer></script>
+</body>
+</html>

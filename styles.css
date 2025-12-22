@@ -1,0 +1,805 @@
+/* ==================================================================
+   Global Styles — Origin Problem Solving
+   Save as: /styles.css
+   ================================================================== */
+
+:root {
+  --bg: #0b0d10;
+  --fg: #e7e9ee;
+  --muted: #aab0bc;
+  --accent: #CC5500; /* OPS Orange */
+  --surface: #15181c;
+  --border: #2a2e35;
+  --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* RESET & BASE */
+html { scroll-behavior: smooth; }
+html, body { background: var(--bg); margin: 0; font-family: var(--font-main); color: var(--fg); line-height: 1.6; }
+* { box-sizing: border-box; }
+
+/* GLOBAL IMAGE RESET - The Safety Net */
+/* This ensures no image ever blows out the layout width */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block; /* Removes bottom spacing gap on inline images */
+}
+
+a { color: var(--accent); text-decoration: none; transition: 0.2s; }
+a:hover { color: #ff7b1c; }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+/* ────── HEADER ────── */
+.site-header {
+  position: sticky; top: 0; z-index: 1000;
+  background: rgba(11,13,16,0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+.head-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  height: 64px;
+}
+.brand a { 
+  display: flex; align-items: center; gap: 10px; color: #fff; 
+}
+.brand img { height: 32px; width: auto; display: block; }
+.brand span { font-weight: 800; font-size: 1.1rem; letter-spacing: -0.02em; }
+
+/* Desktop Nav */
+.main-nav { display: flex; gap: 8px; align-items: center; }
+.nav-link {
+  font-size: 0.9rem; font-weight: 500; color: var(--muted);
+  padding: 8px 12px; border-radius: 6px;
+}
+.nav-link:hover { color: #fff; background: rgba(255,255,255,0.05); }
+.nav-link.active { color: #fff; }
+.nav-link.primary {
+  background: var(--accent); color: #fff; font-weight: 600;
+  padding: 8px 16px; border-radius: 99px;
+}
+.nav-link.primary:hover { background: #e06000; }
+/* Mobile nav intro pill – hidden by default, shown on small screens */
+.mobile-nav-intro {
+  display: none;
+}
+
+/* Special Links */
+.ops-deck-link { color: var(--accent); font-weight: 700; position: relative; }
+.ops-deck-link::after {
+  content: "NEW"; position: absolute; top: -5px; right: -10px;
+  font-size: 9px; font-weight: 800; background: var(--accent);
+  color: #000; padding: 2px 4px; border-radius: 3px; line-height: 1;
+}
+
+/* ────── HERO SECTION ────── */
+.hero-section {
+  padding: 80px 0;
+  border-bottom: 1px solid var(--border);
+  overflow: hidden; /* For snow containment */
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+.hero-text h1 {
+  font-size: 3.5rem; line-height: 1.1; margin: 0 0 24px; letter-spacing: -0.03em;
+}
+.hero-sub {
+  font-size: 1.2rem; color: var(--muted); margin: 0 0 32px; max-width: 500px;
+}
+.cta-group { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 24px; }
+.trust-note { font-size: 0.9rem; color: var(--muted); display: flex; gap: 8px; align-items: center; }
+.star-rating { color: #fbbf24; letter-spacing: 2px; }
+
+/* Hero Visual (Book) */
+.hero-visual { position: relative; display: flex; justify-content: center; }
+.hero-book {
+  /* Desktop Size: 380px is balanced for 1080px wrap */
+  width: 100%; max-width: 380px; height: auto;
+  transform: rotate(-3deg);
+  box-shadow: 20px 20px 60px rgba(0,0,0,0.5);
+  border-radius: 4px;
+  transition: transform 0.3s ease;
+}
+.hero-book:hover { transform: rotate(0deg) scale(1.02); }
+.book-glow {
+  position: absolute; width: 300px; height: 300px;
+  background: var(--accent); filter: blur(120px); opacity: 0.2;
+  top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: -1;
+}
+
+/* ────── SECTIONS ────── */
+.section-std { padding: 80px 0; border-bottom: 1px solid var(--border); }
+.section-alt { padding: 80px 0; background: rgba(255,255,255,0.02); border-bottom: 1px solid var(--border); }
+.section-dark { padding: 60px 0; background: #050608; border-bottom: 1px solid var(--border); }
+
+.section-head { margin-bottom: 40px; max-width: 700px; }
+.section-head h2 { font-size: 2.2rem; margin: 0 0 16px; }
+.section-head p { font-size: 1.1rem; color: var(--muted); }
+
+/* Steps List Polish */
+.steps-list { padding-left: 20px; font-size: 1.1rem; color: var(--muted); }
+.steps-list li { margin-bottom: 12px; padding-left: 8px; }
+.steps-list strong { color: var(--fg); }
+
+/* ────── CARDS & GRIDS ────── */
+.grid3 {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;
+}
+.card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 16px; padding: 24px;
+}
+.feature-card { text-align: center; padding: 32px 24px; transition: transform 0.2s; }
+.feature-card:hover { transform: translateY(-4px); border-color: var(--accent); }
+.feature-card .icon { font-size: 2.5rem; margin-bottom: 16px; }
+.feature-card h3 { margin: 0 0 12px; color: #fff; font-size: 1.3rem; }
+.feature-card p { margin: 0; color: var(--muted); }
+
+/* ────── BUTTONS ────── */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 10px 20px; border-radius: 10px; font-weight: 600;
+  text-decoration: none; transition: all 0.2s; border: 1px solid transparent;
+  cursor: pointer;
+}
+.btn.big { padding: 14px 28px; font-size: 1.1rem; }
+.btn.primary { background: var(--accent); color: #fff; box-shadow: 0 4px 12px rgba(204,85,0,0.3); }
+.btn.primary:hover { background: #e06000; transform: translateY(-1px); box-shadow: 0 6px 16px rgba(204,85,0,0.4); }
+
+/* Secondary button */
+.btn.secondary { background: transparent; border: 1px solid #4a505b; color: var(--fg); }
+.btn.secondary:hover { border-color: var(--accent); color: #fff; }
+.btn.youtube { background: #cc0000; color: #fff; }
+.btn.facebook { background: #1877f2; color: #fff; }
+
+/* ────── JDI TOOL ────── */
+.jdi-card { cursor: pointer; display: block; position: relative; }
+.jdi-card input { margin-right: 8px; transform: scale(1.2); }
+.jdi-card:hover { background: rgba(255,255,255,0.03); }
+.result-card { border-left: 4px solid var(--accent); margin-top: 24px; }
+.result-card.success { border-left-color: #22c55e; }
+
+/* ────── OLFD PROMO ────── */
+.olfd-home-promo {
+  background: linear-gradient(145deg, var(--surface), #1a1d22);
+  border: 1px solid var(--border); border-radius: 20px; padding: 40px;
+}
+.olfd-home-inner { display: flex; gap: 40px; align-items: center; }
+.olfd-home-image img { width: 100%; max-width: 280px; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.4); }
+.badge-new { background: var(--accent); color: #000; font-weight: 800; font-size: 0.75rem; padding: 4px 8px; border-radius: 4px; display: inline-block; margin-bottom: 12px; }
+
+/* ────── MEDIA / VIDEO (Fixed) ────── */
+.video-container { display: flex; justify-content: center; margin: 30px 0; }
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  /* Fallback for aspect-ratio support (16:9) */
+  padding-bottom: 56.25%; 
+  height: 0;
+  background: #000; 
+  border-radius: 12px; 
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+.video-wrapper iframe { 
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; 
+  height: 100%; 
+  border: none; 
+}
+.social-links-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 24px; }
+
+/* ────── INSTALL APP ────── */
+.install-flex { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; }
+.install-instructions { color: var(--muted); font-size: 0.9rem; border-left: 1px solid var(--border); padding-left: 20px; }
+
+/* ────── NEWSLETTER / MAILER ────── */
+.newsletter-embed {
+  border-top: 1px solid var(--border);
+}
+.newsletter-head {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.newsletter-inner {
+  max-width: 600px;
+  margin: 0 auto;
+  background: var(--surface);
+  padding: 24px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+.ml-embedded { 
+  margin: 0 auto; 
+  width: 100%; 
+  min-height: 200px; /* Force height to prevent collapse */
+  display: block; 
+}
+
+/* ────── FOOTER ────── */
+.site-footer { border-top: 1px solid var(--border); padding: 60px 0 20px; margin-top: 40px; font-size: 0.9rem; color: var(--muted); }
+.footer-content { display: flex; justify-content: space-between; margin-bottom: 24px; flex-wrap: wrap; gap: 20px; }
+.footer-brand { display: flex; flex-direction: column; gap: 4px; }
+.footer-brand strong { color: var(--fg); }
+.footer-links a { margin-left: 20px; color: var(--muted); }
+.footer-links a:hover { color: var(--accent); }
+
+/* ────── SEASONAL THEMES (Controlled via app.js) ──────
+   Base = no seasonal banner, no overlay.
+   Themes applied as body classes:
+   - theme-christmas-2025
+   - theme-newyear-2026
+   OPS Tools™ (/starter-kit/) is excluded by app.js.
+*/
+.holiday-banner {
+  display: none;
+  text-align: center;
+  padding: 8px 12px;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+.holiday-banner .seasonal-sub {
+  display: block;
+  font-weight: 500;
+  opacity: 0.85;
+  margin-top: 2px;
+  font-size: 0.92em;
+}
+.holiday-footer-msg {
+  display: none;
+  text-align: center;
+  color: #fff;
+  opacity: 0.85;
+  margin: 20px 0;
+}
+
+/* Default: no overlay */
+body::before { content: none; }
+
+/* Christmas 2025 (snow + banner) */
+.theme-christmas-2025 .holiday-banner {
+  display: block;
+  background: linear-gradient(90deg, #b91c1c, #c2410c);
+  color: #fff;
+}
+.theme-christmas-2025 .holiday-footer-msg { display: block; }
+
+@keyframes snowFall {
+  from { background-position: 0 0; }
+  to   { background-position: 0 100%; }
+}
+.theme-christmas-2025 body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("/assets/img/snow-overlay.png");
+  background-size: 600px 600px;
+  background-repeat: repeat;
+  opacity: 0.12;
+  z-index: 9000;
+  animation: snowFall 20s linear infinite;
+}
+
+/* New Year 2026 (diagonal gold shimmer + banner) */
+.theme-newyear-2026 .holiday-banner {
+  display: block;
+  background: rgba(5, 6, 8, 0.86);
+  color: #fff;
+  border-bottom: 1px solid rgba(214, 173, 96, 0.28);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+/* Footer message stays hidden in New Year theme unless you add a new message later. */
+
+@keyframes nyShimmerDrift {
+  from { background-position: 0 0; }
+  to   { background-position: -800px 800px; } /* diagonal drift ↗ */
+}
+.theme-newyear-2026 body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9000;
+  opacity: 0.16;
+
+  /* Fine gold dust. No bursts, no flicker. */
+  background-image:
+    radial-gradient(1px 1px at 10% 20%, rgba(214, 173, 96, 0.55) 0%, rgba(214, 173, 96, 0) 60%),
+    radial-gradient(1px 1px at 35% 75%, rgba(214, 173, 96, 0.45) 0%, rgba(214, 173, 96, 0) 62%),
+    radial-gradient(1px 1px at 70% 30%, rgba(214, 173, 96, 0.40) 0%, rgba(214, 173, 96, 0) 62%),
+    radial-gradient(1px 1px at 85% 65%, rgba(214, 173, 96, 0.38) 0%, rgba(214, 173, 96, 0) 62%),
+    radial-gradient(1px 1px at 50% 45%, rgba(214, 173, 96, 0.33) 0%, rgba(214, 173, 96, 0) 62%),
+    linear-gradient(120deg, rgba(214, 173, 96, 0.10), rgba(214, 173, 96, 0) 55%);
+  background-size: 800px 800px;
+  background-repeat: repeat;
+  animation: nyShimmerDrift 26s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-christmas-2025 body::before,
+  .theme-newyear-2026 body::before { animation: none; }
+}
+
+/* ────── MOBILE & RESPONSIVE ────── */
+.mobile-cta { display: none; }
+.menu-toggle { display: none; }
+
+/* Helper classes for mobile clamping */
+.clamp-mobile {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Mobile nav and layout for <= 900px */
+@media (max-width: 900px) {
+  /* Hero stack */
+  .hero-grid { grid-template-columns: 1fr; text-align: center; gap: 30px; }
+  .hero-text h1 { font-size: 2.5rem; }
+  .hero-sub { margin-left: auto; margin-right: auto; }
+  .cta-group { justify-content: center; }
+  .trust-note { justify-content: center; }
+  .hero-visual { order: -1; }
+  
+  /* Mobile Hero Size: 220px is optimal for phones */
+  .hero-book { max-width: 220px; }
+
+  /* OLFD promo stack */
+  .olfd-home-inner { flex-direction: column; text-align: center; }
+  .install-flex { flex-direction: column; text-align: center; }
+  .install-instructions {
+    border-left: none;
+    padding-left: 0;
+    margin-top: 10px;
+  }
+
+  /* Footer stack */
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+  .footer-brand { align-items: center; }
+  .footer-links {
+    justify-content: center;
+    gap: 20px;
+  }
+  .footer-links a { margin: 0; }
+
+  /* Mobile nav */
+  .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: transparent;
+    border: 1px solid var(--border);
+    padding: 8px;
+    border-radius: 6px;
+    margin-left: auto;
+    z-index: 2100;
+    cursor: pointer;
+  }
+  .menu-toggle span {
+    width: 24px;
+    height: 2px;
+    background: #fff;
+    transition: 0.3s;
+  }
+
+  .menu-toggle.is-active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .menu-toggle.is-active span:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-toggle.is-active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+    /* Mobile nav intro pill */
+  .mobile-nav-intro {
+    display: block;
+    text-align: center;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    font-weight: 600;
+    padding: 10px 16px 12px;
+    margin: 0 0 16px;
+    background: rgba(204, 85, 0, 0.16);
+    border-radius: 999px;
+  }
+
+  /* Full-screen mobile nav overlay */
+  .main-nav {
+    display: none;
+    position: fixed;
+    inset: 0;
+    min-height: 100vh;
+    background: #0b0d10;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    padding: 80px 24px 40px;
+    z-index: 2000;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    border-top: 1px solid var(--border);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.85);
+  }
+
+  .main-nav.is-open {
+    display: flex;
+    animation: navSlideDown 0.2s ease-out;
+  }
+
+  @keyframes navSlideDown {
+    from {
+      transform: translateY(-6px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .main-nav .nav-link {
+    width: 100%;
+    text-align: center;
+    font-size: 1.25rem;
+    padding: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 0;
+  }
+
+  .main-nav .nav-link:last-of-type {
+    margin-bottom: 24px;
+  }
+
+  .nav-link.primary {
+    margin-top: 24px;
+    width: auto;
+    display: inline-block;
+    align-self: center;
+  }
+
+
+  /* Mobile CTA bottom bar */
+  .mobile-cta {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 12px 16px;
+    background: rgba(11,13,16,0.95);
+    border-top: 1px solid var(--border);
+    backdrop-filter: blur(8px);
+    z-index: 1200;
+  }
+  .btn.full-width { width: 100%; justify-content: center; }
+  .site-footer { padding-bottom: 80px; }
+  
+  /* Force clamp images that might be huge */
+  .clamp-mobile {
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+}
+
+/* Global mobile image clamp for content */
+@media (max-width: 600px) {
+  /* Content images inside standard sections */
+  .section-std img,
+  .section-dark img {
+    /* 320px cap ensures it fits on iPhone SE */
+    max-width: min(320px, 90vw);
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Make sure gallery-style grids still breathe */
+  .section-std .grid3 img,
+  .section-dark .grid3 img {
+    max-width: 100%;
+  }
+}
+/* ────── MAILERLITE OVERRIDES ────── */
+/* Forces the raw HTML form to match the dark OPS theme */
+
+#mlb2-29298557.ml-form-embedContainer {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+}
+
+#mlb2-29298557 .ml-form-embedWrapper {
+  background-color: transparent !important;
+  box-sizing: border-box;
+}
+
+/* Typography Overrides */
+#mlb2-29298557 h4 {
+  color: #fff !important;
+  font-family: var(--font-main) !important;
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+  margin: 0 0 10px 0 !important;
+}
+
+#mlb2-29298557 p {
+  color: var(--muted) !important;
+  font-family: var(--font-main) !important;
+  font-size: 1rem !important;
+  margin: 0 0 20px 0 !important;
+}
+
+/* Input Fields */
+#mlb2-29298557 .ml-form-fieldRow input.form-control {
+  background-color: var(--bg) !important;
+  color: #fff !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 8px !important;
+  font-family: var(--font-main) !important;
+  font-size: 1rem !important;
+  padding: 12px 16px !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  height: auto !important;
+  transition: border-color 0.2s;
+}
+
+#mlb2-29298557 .ml-form-fieldRow input.form-control:focus {
+  border-color: var(--accent) !important;
+  outline: none;
+}
+
+#mlb2-29298557 .ml-form-fieldRow input::placeholder {
+  color: #555 !important;
+}
+
+/* Button Styling */
+#mlb2-29298557 .ml-form-embedSubmit button {
+  background-color: var(--accent) !important;
+  border: none !important;
+  border-radius: 8px !important;
+  color: #fff !important;
+  cursor: pointer;
+  font-family: var(--font-main) !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  padding: 12px 24px !important;
+  width: 100% !important;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+#mlb2-29298557 .ml-form-embedSubmit button:hover {
+  background-color: #e06000 !important;
+  transform: translateY(-1px);
+}
+
+/* Success Message */
+#mlb2-29298557 .ml-form-successContent h4 {
+  color: #fff !important;
+}
+#mlb2-29298557 .ml-form-successContent p {
+  color: var(--muted) !important;
+}
+
+/* Loading Spinner override */
+.ml-form-embedSubmitLoad:after {
+  border-color: #ffffff #ffffff #ffffff transparent !important;
+}
+/* BookAuthority award badge in hero */
+.ba-award-section {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  font-size: 0.9rem;
+  color: var(--muted);
+  flex-basis: 100%; /* forces it onto its own line inside .cta-group */
+}
+
+.ba-award-copy span {
+  font-weight: 600;
+}
+
+.ba-award {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  outline: 0;
+}
+
+.ba-award img {
+  width: 200px;
+  height: auto;
+  display: block;
+  border: 0;
+}
+
+@media (max-width: 600px) {
+  .ba-award-section {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* =========================================================
+   Origin Thinking™ Assistant Floating Button
+   ========================================================= */
+
+.ot-assistant-btn {
+  position: fixed;
+  bottom: 1.25rem;
+  right: 1.25rem;
+  z-index: 1000;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+
+  padding: 0.75rem 0.9rem;
+  max-width: 220px;
+
+  background: #0b0b0b;
+  color: #ffffff;
+  text-decoration: none;
+
+  border: 1px solid #CC5500;
+  border-radius: 6px;
+
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 1.2;
+
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+.ot-assistant-btn:hover,
+.ot-assistant-btn:focus {
+  background: #111111;
+  outline: none;
+}
+
+.ot-assistant-subtext {
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: #cccccc;
+}
+
+/* Disclaimer styling (minimal) */
+.assistant-disclaimer {
+  display: block;
+  margin-top: 0.5rem;
+  color: #cccccc;
+  font-size: 0.75rem;
+  line-height: 1.3;
+}
+
+/* Mobile adjustments */
+@media (max-width: 640px) {
+  .ot-assistant-btn {
+    /* Push above the fixed "Buy the Book" bar on mobile */
+  bottom: calc(env(safe-area-inset-bottom) + 84px);
+  right: 0.75rem;
+
+    max-width: 180px;
+    font-size: 0.8rem;
+  
+}
+}
+
+
+/* =========================================================
+   Mobile-only: quiet Assistant button (scoped)
+   - Desktop unchanged
+   - Mobile shows a small pill labeled "Assistant"
+   - Keep underlying text for accessibility (we only make it visually transparent)
+   ========================================================= */
+@media (max-width: 640px) {
+  .ot-assistant-btn {
+    /* Smaller, quieter pill */
+    padding: 0.45rem 0.6rem;
+    font-size: 0.72rem;
+    line-height: 1;
+    border-radius: 999px;
+    max-width: none;
+    width: auto;
+
+    /* Lower it, closer to the Buy bar (tune 68-80px if needed) */
+    right: 0.75rem;
+    bottom: calc(env(safe-area-inset-bottom) + 68px);
+
+    /* Visually replace long label without removing accessible name */
+    color: transparent !important;
+    text-shadow: none !important;
+  }
+
+  /* Hide the subtext on mobile (visual noise) */
+  .ot-assistant-btn .ot-assistant-subtext {
+    display: none !important;
+  }
+
+  /* Visible short label */
+  .ot-assistant-btn::after {
+    content: "Assistant";
+    color: #ffffff;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+  }
+}
+
+/* =========================================================
+   Mobile-only: compact Assistant pill (non-intrusive)
+   - Does not affect desktop
+   - Keeps original link accessible name (aria-label/text)
+   ========================================================= */
+@media (max-width: 640px) {
+  .ot-assistant-btn {
+    /* Position: sit just above the fixed Buy bar */
+    bottom: calc(env(safe-area-inset-bottom) + 112px);
+    right: 0.9rem;
+
+    /* Compact pill: never stretches full width */
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.45rem;
+
+    width: fit-content;
+    max-width: none;
+
+    padding: 0.5rem 0.7rem;
+    border-radius: 999px;
+
+    /* Make sure it doesn't fight the Buy bar */
+    z-index: 1100;
+
+    /* Hide long visible label without removing accessibility */
+    font-size: 0;
+    line-height: 0;
+  }
+
+  /* Small OPS orange dot */
+  .ot-assistant-btn::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    display: inline-block;
+    flex: 0 0 auto;
+  }
+
+  /* Visible label */
+  .ot-assistant-btn::after {
+    content: "Assistant";
+    font-size: 0.78rem;
+    line-height: 1;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+  }
+
+  /* Subtext stays hidden on mobile */
+  .ot-assistant-btn .ot-assistant-subtext { display: none !important; }
+}

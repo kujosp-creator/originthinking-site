@@ -1,0 +1,55 @@
+# Global defaults
+/* 
+  X-Robots-Tag: all
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Content-Type-Options: nosniff
+  Strict-Transport-Security: max-age=15552000
+  X-Frame-Options: DENY
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; img-src 'self' data: https://images-na.ssl-images-amazon.com https://m.media-amazon.com https://i.ytimg.com https://scontent.xx.fbcdn.net https://assets.mailerlite.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://assets.mailerlite.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline' https://assets.mailerlite.com https://connect.facebook.net; connect-src 'self' https://assets.mailerlite.com https://connect.facebook.net; frame-src https://www.youtube.com https://www.facebook.com; object-src 'none'; form-action 'self' https://assets.mailerlite.com
+  Cache-Control: no-cache
+
+# Core CSS & JS
+/styles.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/app.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/starter-kit/starter-kit-styles.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/starter-kit/starter-kit-scroll.js
+  Cache-Control: public, max-age=31536000, immutable
+
+# Icons & static images
+/cover.png
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/icons/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/img/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/manifest.webmanifest
+  Cache-Control: public, max-age=31536000, immutable
+
+# PDFs (indexable + modest cache)
+/assets/downloads/*
+  X-Robots-Tag: all
+  Cache-Control: public, max-age=604800
+
+# Service worker (always fresh)
+/service-worker.js
+  Cache-Control: public, max-age=0, must-revalidate
+
+# Game (frequent updates; short cache)
+/lean-quest/*
+  Cache-Control: public, max-age=300
+
+# Housekeeping
+/sitemap.xml
+  Cache-Control: public, max-age=86400
+
+/robots.txt
+  Cache-Control: public, max-age=86400

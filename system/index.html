@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Origin Thinking™ System | Origin Problem Solving™</title>
+  <meta name="description" content="See how Origin Problem Solving™, OPS Tools™, the Origin Leadership Focus Deck™, and the PROVE Loop™ connect as one practical system for solving real work problems and sustaining the gains every day.">
+  <meta name="author" content="Dustin Thomas">
+  <link rel="canonical" href="https://www.originthinking.com/system/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Origin Problem Solving™">
+  <meta property="og:title" content="The Origin Thinking™ System">
+  <meta property="og:description" content="One connected operating system: Origin Problem Solving™, OPS Tools™, the Origin Leadership Focus Deck™, and the PROVE Loop™.">
+  <meta property="og:url" content="https://www.originthinking.com/system/">
+  <meta property="og:image" content="https://www.originthinking.com/cover.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The Origin Thinking™ System">
+  <meta name="twitter:description" content="One connected operating system: Origin Problem Solving™, OPS Tools™, the Origin Leadership Focus Deck™, and the PROVE Loop™.">
+  <meta name="twitter:image" content="https://www.originthinking.com/cover.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link href="/styles.css" rel="stylesheet">
+
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#CC5500">
+  <link rel="icon" href="/cover.png" type="image/png">
+
+  <style>
+    /* Global Image Reset to prevent stretching/distortion anywhere */
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* Scope everything to .system-page so we do not touch other pages */
+    .system-page { padding-bottom: 3rem; }
+
+    /* Holiday Elements overrides if not in main CSS */
+    .holiday-banner {
+      background: #1a1d21; 
+      color: #CC5500;
+      text-align: center; 
+      padding: 8px; 
+      font-size: 0.9rem; 
+      font-weight: 600;
+      border-bottom: 1px solid #2a2e35;
+    }
+
+    /* HERO: stack on mobile, side-by-side on desktop */
+    .system-page .system-hero {
+      display: flex;
+      flex-direction: column;
+      gap: 1.75rem;
+      align-items: flex-start;
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+
+    /* Base size for Desktop - Adjusted to prevent visual dominance */
+    .system-page .system-hero-image {
+      width: 100%;
+      max-width: 380px; 
+      height: auto;
+      margin: 0 auto;
+      display: block;
+      /* subtle shadow to lift it off the dark background */
+      filter: drop-shadow(0 0 20px rgba(0,0,0,0.5));
+    }
+
+    .system-page .system-hero-copy { 
+      max-width: 40rem; 
+    }
+
+    .system-page .system-hero .cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .system-page .system-hero .note {
+      margin-top: 0.75rem;
+      font-size: 0.95rem;
+      opacity: 0.8;
+    }
+
+    /* OVERVIEW GRID */
+    .system-page .system-overview {
+      margin-top: 3rem;
+    }
+
+    .system-page .system-intro {
+      max-width: 40rem;
+      margin-bottom: 2rem;
+    }
+
+    /* Diagram Styling */
+    .system-loop-diagram {
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+      margin: 0 auto 3rem auto;
+      display: block;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    .system-page .system-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .system-page .system-layer .card-body {
+      margin-bottom: 0.75rem;
+    }
+
+    /* FLOW + CTA spacing */
+    .system-page .system-flow {
+      margin-top: 3rem;
+    }
+
+    .system-page .system-flow ol {
+      padding-left: 1.25rem;
+    }
+
+    .system-page .system-flow li {
+      margin-bottom: 1rem;
+    }
+
+    .system-page .system-cta {
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    /* DOWNLOADS SECTION */
+    .system-page .system-downloads {
+      margin-top: 3rem;
+    }
+
+    .system-page .system-downloads-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .system-page .system-downloads .dl-card {
+      border-radius: 0.75rem;
+      padding: 1rem 1.25rem;
+      background: rgba(0,0,0,0.35);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .system-page .system-downloads .dl-card h3 {
+      margin-top: 0;
+      margin-bottom: 0.25rem;
+      font-size: 1.05rem;
+      color: var(--accent, #CC5500);
+    }
+
+    .system-page .system-downloads .dl-card p {
+      margin: 0.25rem 0 0.5rem 0;
+      font-size: 0.95rem;
+    }
+
+    /* SYSTEM SUPPORT SECTION */
+    .system-page .system-support {
+      margin-top: 3rem;
+    }
+
+    .system-page .system-support-intro {
+      max-width: 40rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .system-page .system-support-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .system-page .system-support .support-card {
+      border-radius: 0.75rem;
+      padding: 1rem 1.25rem;
+      background: rgba(0,0,0,0.35);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .system-page .system-support .support-card h3 {
+      margin-top: 0;
+      margin-bottom: 0.35rem;
+      font-size: 1.05rem;
+      color: var(--accent, #CC5500);
+    }
+
+    .system-page .system-support .support-card p {
+      margin: 0.25rem 0 0.5rem 0;
+      font-size: 0.95rem;
+    }
+
+    .system-page .system-support .support-meta {
+      font-size: 0.85rem;
+      opacity: 0.9;
+      margin-top: 0.3rem;
+      font-style: italic;
+    }
+
+    /* RESPONSIVE BREAKPOINTS */
+
+    /* Desktop/Tablet Landscape */
+    @media (min-width: 768px) {
+      .system-page .system-hero {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .system-page .system-hero-image {
+        margin: 0;
+        flex: 0 0 40%;
+      }
+
+      .system-page .system-hero-copy {
+        flex: 1 1 0;
+      }
+
+      .system-page .system-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .system-page .system-flow,
+      .system-page .system-cta,
+      .system-page .system-downloads {
+        max-width: 44rem;
+      }
+
+      .system-page .system-downloads-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    /* Tablet Portrait / Small Desktop */
+    @media (max-width: 900px) {
+      .system-page .system-hero-image {
+        /* Reduce size so it doesn't look huge on tablets */
+        max-width: 240px; 
+      }
+      .system-loop-diagram {
+        max-width: 360px;
+      }
+    }
+
+    /* Mobile / Small Phones */
+    @media (max-width: 600px) {
+      /* Aggressive clamping for mobile to fix "too large" issue */
+      .system-page .system-hero-image {
+        /* This is a tall image stack, it must be small on mobile to not push content away */
+        max-width: 180px; 
+        margin-bottom: 24px;
+      }
+
+      .system-loop-diagram {
+        max-width: 300px;
+      }
+      
+      .system-page .system-hero {
+        text-align: center;
+      }
+      
+      .system-page .system-hero .cta {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a href="#system-top" class="skip-link">Skip to main content</a>
+
+  <div class="holiday-banner" role="status">⭐ Wishing you a season of clarity and continuous improvement. ⭐</div>
+
+  <header class="site-header">
+    <div class="wrap head-inner">
+      <div class="brand">
+        <a href="/" style="text-decoration:none; color:inherit;">Origin Problem Solving™</a>
+      </div>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      
+      <nav class="main-nav">
+        <div class="mobile-nav-intro" aria-hidden="true">
+          Menu · Scroll to see all
+        </div>
+        <a href="/#home-top" class="nav-link">Home</a>
+        <a href="/starter-kit/" class="nav-link toolkit-link">OPS Tools™</a>
+        <a href="/leadership-focus-deck/" class="nav-link ops-deck-link">Leadership Focus Deck™</a>
+        <a href="/prove-loop/" class="nav-link">PROVE Loop™</a>
+        <a href="/system/" class="nav-link active">Origin Thinking™ System</a>
+        <a href="/articles/" class="nav-link">Articles</a>
+        <a href="/about/" class="nav-link">About</a>
+        <a href="mailto:hello@originthinking.com" class="nav-link">Contact</a>
+        <a href="/buy" class="nav-link primary" target="_blank" rel="noopener">Buy Book</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="wrap system-page" id="system-top">
+
+    <section class="hero system-hero">
+      <img src="/assets/img/origin-thinking-system.png"
+           alt="Four stacked tiles for Origin Problem Solving™, OPS Tools™, the Origin Leadership Focus Deck™, and PROVE Loop™ connected by an OPS Tools orange beam"
+           class="system-hero-image">
+
+      <div class="system-hero-copy">
+        <h1>The Origin Thinking™ System</h1>
+        <p>
+          Origin Thinking™ is one operating system, not a pile of programs. It is built to avoid Fake Lean:
+          continuous improvement without real respect for or faith in people.
+        </p>
+
+        <div class="cta">
+          <a class="btn primary" href="/buy" target="_blank" rel="noopener">Start with the Book</a>
+          <a class="btn sample" href="/starter-kit/">Browse OPS Tools™</a>
+          <a class="btn" href="/leadership-focus-deck/">See the Focus Deck</a>
+        </div>
+
+        <p class="note">
+          We put structure around problem solving and daily sustainment, and we put equal structure around leadership behavior.
+          Until both change together, every Lean rollout is the same movie with a new title.
+        </p>
+      </div>
+    </section>
+
+    <section class="system-overview">
+      <h2>Four connected pieces</h2>
+      <p class="system-intro">
+        Each piece can stand alone, but they are built as one loop. Method and tools help you find the right answer,
+        the leadership deck shapes how you lead through the change, and PROVE Loop™ plus the Tier 2 Help Chain keep
+        improvements from sliding back into firefighting.
+      </p>
+
+      <p>
+        Most organizations treat problem solving, leadership development, and daily management as three separate efforts:
+      </p>
+      <ul>
+        <li>Problem solving lives in projects and events.</li>
+        <li>Leadership lives in training and slogans.</li>
+        <li>Daily management lives in huddles and dashboards.</li>
+      </ul>
+      <p>
+        The result is a broken loop. Solutions fade. Leaders revert. Huddles become status reports.
+      </p>
+      <p>
+        Origin Thinking™ is a single operating system that closes that loop. It connects:
+      </p>
+      <ul>
+        <li>Origin Problem Solving™ – how we define and fix problems.</li>
+        <li>OPS Tools™ – simple worksheets and visuals that support the method.</li>
+        <li>OPS Leadership Focus Deck™ – how leaders behave while we do the work.</li>
+        <li>PROVE Loop™ and Tier 2 Help Chain – how we check, every day, whether the new way of working is actually happening.</li>
+      </ul>
+
+      <img src="/assets/img/origin-system-loop.png" 
+           alt="Diagram showing the Origin Thinking™ System loop: Method connects to Tools, which support Leadership, which drives Sustainment, feeding back into Method."
+           class="system-loop-diagram"
+           loading="lazy">
+
+      <div class="system-grid">
+        <article class="card system-layer">
+          <span class="layer-label">Layer 1 · Method</span>
+          <h3 class="card-title">Origin Problem Solving™</h3>
+          <p class="card-body">
+            The core method for complex, recurring problems when guessing and quick fixes have already failed.
+            Built on Clarity, Cause, and Control, it takes you from vague complaints to a clear gap, real causes,
+            and a practical standard you can test in live work.
+          </p>
+          <p><a class="btn sample" href="/buy" target="_blank" rel="noopener">Buy the Book</a></p>
+        </article>
+
+        <article class="card system-layer">
+          <span class="layer-label">Layer 2 · Tools</span>
+          <h3 class="card-title">OPS Tools™</h3>
+          <p class="card-body">
+            A focused set of OPS Tools™ straight from the book. OPS Perception Builder™, SIPOC Lite, Go and See notes,
+            problem breakdown KPI trees, Cause Maps and fishbone templates, Impact vs Effort Matrix, Detailed Action Plans,
+            pilot plans, and more. Each tool supports a specific move in the method so teams can see the same problem at the
+            same time instead of filling out a giant workbook.
+          </p>
+          <p><a class="btn" href="/starter-kit/">Open OPS Tools™</a></p>
+        </article>
+
+        <article class="card system-layer">
+          <span class="layer-label">Layer 3 · Leadership</span>
+          <h3 class="card-title">Origin Leadership Focus Deck™</h3>
+          <p class="card-body">
+            The Origin Leadership Focus Deck™ (used inside the system as the OPS Leadership Focus Deck™) is an 18 card
+            leadership tool for quarterly one to ones. Leaders sort the cards, choose one behavior to strengthen for the
+            next 90 days, and write a short plan tied directly to real work. The focus lives in normal development notes
+            and shows up in how the leader runs Go and See, huddles, and PROVE Loop™ checks, without turning the card
+            itself into a public scorecard or performance rating.
+          </p>
+          <p><a class="btn" href="/leadership-focus-deck/">Learn about the Deck</a></p>
+        </article>
+
+        <article class="card system-layer">
+          <span class="layer-label">Layer 4 · Sustain</span>
+          <h3 class="card-title">PROVE Loop™</h3>
+          <p class="card-body">
+            A short daily sustain routine at Tier 1, backed by a Tier 2 Help Chain. Under each metric, leaders run PROVE
+            Loop™ in less than 5 minutes total: restate the gap, mark yesterday’s result, report what they saw at the work,
+            set status Green, Yellow, or Red, and choose the next move or escalation. Red is a win because it catches drift
+            early and keeps problems from sliding back into firefighting.
+          </p>
+          <p><a class="btn" href="/prove-loop/">Learn about PROVE Loop™</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section class="system-flow">
+      <h2>How to use the system</h2>
+      <ol>
+        <li>
+          <strong>Pick one real gap.</strong>
+          Use Origin Problem Solving™ to define the target and actual, map the current condition,
+          and design a better way of working with the people who do the work.
+        </li>
+        <li>
+          <strong>Use the minimum OPS Tools™.</strong>
+          Pull in only the tools that help you make the next decision, such as a Cause Map, Point of Cause Map,
+          or A3 view. Do not fill out more fields than you need to see the problem clearly.
+        </li>
+        <li>
+          <strong>Put the gap on the board.</strong>
+          Add a PROVE Strip under the key metric on the Tier 1 board. Write the gap in the P box and set
+          up a simple run chart in the R box so you can see the pattern every day.
+        </li>
+        <li>
+          <strong>Run the daily PROVE Loop™.</strong>
+          In the start of shift huddle, restate the gap, mark yesterday’s result, report what you saw at the work,
+          set the status, and choose the next move. Escalate bigger obstacles to the Tier 2 Help Chain instead of
+          letting them die in notebooks and email.
+        </li>
+        <li>
+          <strong>Grow leaders on purpose.</strong>
+          Once per quarter, use the Origin Leadership Focus Deck™ to choose one leadership behavior to practice. Capture
+          that focus in the leader’s normal one to one or development notes and use it as a quiet lens during Go and See,
+          daily work, and PROVE Loop™ checks.
+        </li>
+        <li>
+          <strong>Make executive commitments explicit.</strong>
+          Origin Thinking™ cannot be a side project. Executives agree to protect the work
+          (huddles and Go and See time are not optional), protect people (Red shows system problems, not individual
+          failure), and lead by example (they use the OPS Leadership Focus Deck™ themselves and carry a 90 day focus
+          into their own one to ones and Go and See visits).
+        </li>
+      </ol>
+    </section>
+
+    <section class="system-downloads" aria-labelledby="system-docs-heading">
+      <h2 id="system-docs-heading">System docs and PROVE Loop™ updates</h2>
+      <p>
+        The Origin Thinking™ system and PROVE Loop™ standards are in active use and still evolving.
+        Instead of posting every working draft as a public download, we share updates when they are
+        ready to help real teams.
+      </p>
+
+      <div class="system-downloads-grid">
+        <article class="dl-card">
+          <h3>Get PROVE Loop™ updates</h3>
+          <p>
+            If you want to see the PROVE Loop™ tools as they ship into OPS Tools™, join the
+            Origin Thinking™ newsletter. You will get occasional updates on new worksheets,
+            checklists, and examples, not daily noise.
+          </p>
+          <p>
+            <a class="btn" href="/starter-kit/#newsletter">Get PROVE Loop™ updates</a>
+          </p>
+          <p class="note" style="font-size:0.9rem;opacity:0.85;margin-top:4px;">
+            You will join the same Origin Thinking™ list used for OPS Tools™ and book updates.
+          </p>
+        </article>
+
+        <article class="dl-card">
+          <h3>Talk about your system</h3>
+          <p>
+            If you are wrestling with how to connect your boards, huddles, and problem solving method,
+            you can share a snapshot of your current system and start a conversation.
+          </p>
+          <p>
+            <a class="btn secondary"
+               href="mailto:hello@originthinking.com?subject=Origin%20System%20and%20PROVE%20Loop%20question">
+              Email Dustin about PROVE Loop™
+            </a>
+          </p>
+          <p class="note" style="font-size:0.9rem;opacity:0.85;margin-top:4px;">
+            Capacity is limited and responses may be brief, but every question helps shape future tools.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="system-support" aria-labelledby="system-support-heading">
+      <h2 id="system-support-heading">System support and consults</h2>
+      <p class="system-support-intro">
+        I am currently in a full time operational excellence role, so my time for direct support is limited.
+        When I do take on work, I keep it tight and practical. The options below are not currently offered.
+      </p>
+
+      <div class="system-support-grid">
+        <article class="support-card" id="virtual-snapshot">
+          <h3>Virtual System Snapshot (60–90 minutes)</h3>
+          <p>
+            A focused virtual session to review your current daily management and problem solving flow. Before the call,
+            you share photos or screenshots of your Tier boards and a short description of how you run huddles and
+            escalations. On the call, we walk through what is working, what is not, and where Origin Problem Solving™,
+            OPS Tools™, the Origin Leadership Focus Deck™, and PROVE Loop™ could fit.
+          </p>
+          <p>
+            Within a few days you receive a short summary with three to five specific recommendations and a sketch of a simple
+            next step you can try with your team.
+          </p>
+          <p class="support-meta">
+            Currently NOT available. Sessions are scheduled only when time and fit line up.
+          </p>
+          <p>
+            <a class="btn sample" href="mailto:hello@originthinking.com?subject=Virtual%20System%20Snapshot%20Inquiry">
+              Join the interest list
+            </a>
+          </p>
+        </article>
+
+        <article class="support-card">
+          <h3>Future on site PROVE Loop™ installation</h3>
+          <p>
+            In select cases, I help teams design and install the full PROVE Loop™ Tier 1 and Tier 2 system on site.
+            That work includes tailoring the board layouts, huddle scripts, and Help Chain to your operation and
+            wiring in the Origin Leadership Focus Deck™ so leadership behavior is part of the daily rhythm.
+          </p>
+          <p>
+            Right now, capacity for on site work is very limited. Over time, I plan to offer a small number of
+            implementations for teams who want to run the full Origin Thinking™ system, not just individual tools.
+          </p>
+          <p class="support-meta">
+            If this is something you may want in the future, you can join a small interest list for updates.
+          </p>
+          <p>
+            <a class="btn" href="/#newsletter">
+              Join the interest list
+            </a>
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="system-cta">
+      <div class="card">
+        <h2>Start practical, not perfect</h2>
+        <p>
+          Most teams do not need another poster or slogan. They need a clear method, a few practical tools,
+          and leaders who keep showing up when things get hard.
+        </p>
+        <p>
+          Start with the book, pull a few OPS Tools™, then bring in the Origin Leadership Focus Deck™ and PROVE Loop™
+          when you are ready to run a full Origin Thinking™ system with Tier 1 and Tier 2 boards.
+        </p>
+        <div class="cta">
+          <a class="btn primary" href="/buy" target="_blank" rel="noopener">Buy Origin Problem Solving™</a>
+          <a class="btn" href="/starter-kit/">Download OPS Tools™</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <strong>Origin Thinking™</strong>
+          <small>© 2025 Origin Thinking, LLC. All rights reserved.</small>
+        </div>
+        <div class="footer-links">
+          <a href="/starter-kit/">Tools</a>
+          <a href="/buy" target="_blank" rel="noopener">Buy Book</a>
+          <a href="mailto:hello@originthinking.com" class="nav-link">Contact</a>
+        </div>
+      </div>
+      <div class="holiday-footer-msg">⭐ Wishing you a season of clarity and continuous improvement. ⭐</div>
+      <small class="tm-note" style="display:block; margin-top:16px; font-size:0.8rem; color:var(--text-muted, #999);">
+        Origin Problem Solving™, OPS Tools™, OPS Perception Builder™, PROVE Loop™, OPS Leadership Focus Deck™, Origin Leadership Focus Deck™, and Origin Thinking™ are trademarks of Origin Thinking, LLC.
+      </small>
+    </div>
+  </footer>
+
+  <script src="/app.js"></script>
+</body>
+</html>
+
+

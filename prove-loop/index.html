@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>PROVE Loop™ | Daily Management that Holds the Gains</title>
+  <meta name="description" content="PROVE Loop™ is the daily management side of Origin Thinking™. It connects Tier 1 and Tier 2 boards, huddles, and leadership behavior so improvements do not fade back to the old normal.">
+  <meta name="author" content="Dustin Thomas">
+  <link rel="canonical" href="https://www.originthinking.com/prove-loop/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Origin Problem Solving™">
+  <meta property="og:title" content="PROVE Loop™ | Daily Management that Holds the Gains">
+  <meta property="og:description" content="PROVE Loop™ is the daily management side of Origin Thinking™. It is a simple Tier 1 and Tier 2 rhythm that keeps boards, huddles, and leadership behavior focused on holding the gains.">
+  <meta property="og:url" content="https://www.originthinking.com/prove-loop/">
+  <meta property="og:image" content="https://www.originthinking.com/assets/img/prove-loop.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="PROVE Loop™ | Daily Management that Holds the Gains">
+  <meta name="twitter:description" content="PROVE Loop™ is the daily management side of Origin Thinking™. It keeps your Tier 1 and Tier 2 rhythm focused on real gaps, real experiments, and leadership behavior.">
+  <meta name="twitter:image" content="https://www.originthinking.com/assets/img/prove-loop.png">
+
+  <link href="/styles.css" rel="stylesheet">
+
+  <meta name="theme-color" content="#CC5500">
+  <link rel="icon" href="/cover.png" type="image/png">
+
+  <style>
+    /* Page Specific Styles - Origin Dark Theme */
+    :root {
+      --accent: #CC5500;
+      --surface: #0f1216;
+      --card-bg: #15181c;
+      --border: #2a2e35;
+      --text-muted: #98a2b3;
+    }
+
+    /* Hero Section */
+    .pl-hero {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      align-items: center;
+      padding: 80px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .pl-hero h1 { font-size: 2.75rem; line-height: 1.1; margin-bottom: 24px; color: #fff; }
+    .pl-hero p { font-size: 1.125rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 32px; }
+
+    .pl-hero-art {
+      display: flex;
+      justify-content: center;
+    }
+
+    /* Fixed Image Sizing */
+    .pl-hero-art img {
+      width: 100%;
+      height: auto;
+      display: block;
+      filter: drop-shadow(0 0 40px rgba(204,85,0,0.1));
+      max-width: 280px; /* Reduced Desktop Size */
+      margin: 0 auto;
+    }
+
+    .pl-tagline {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      border-left: 2px solid var(--border);
+      padding-left: 16px;
+      margin-top: 32px;
+      font-style: italic;
+    }
+
+    /* Standard Section */
+    .pl-section { padding: 80px 0; border-bottom: 1px solid var(--border); }
+    .pl-section:last-of-type { border-bottom: none; }
+    .pl-section h2 { font-size: 2rem; margin-bottom: 24px; color: #fff; }
+    .pl-section h3 { color: var(--accent); margin-top: 0; font-size: 1.25rem; margin-bottom: 16px; }
+    .pl-section p { color: var(--text-muted); font-size: 1.1rem; line-height: 1.6; margin-bottom: 24px; }
+
+    /* Lists */
+    .pl-list { padding-left: 20px; color: var(--text-muted); line-height: 1.6; margin-bottom: 24px; }
+    .pl-list li { margin-bottom: 12px; }
+    .pl-list strong { color: #fff; }
+
+    /* Callout Box */
+    .pl-callout {
+      background: rgba(204,85,0,0.05);
+      border-left: 4px solid var(--accent);
+      padding: 24px;
+      border-radius: 0 8px 8px 0;
+      margin: 32px 0;
+      color: #e7e9ee;
+      font-size: 1.1rem;
+      font-weight: 500;
+      line-height: 1.6;
+    }
+
+    /* Grids */
+    .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; margin-top: 40px; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 40px; }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .card:hover { transform: translateY(-4px); border-color: var(--accent); }
+    .card.highlight { border-color: var(--accent); background: linear-gradient(145deg, #15181c, #1a1d22); }
+    .card p { font-size: 1rem; margin: 0; }
+
+    .cta-link {
+      display: inline-block;
+      margin-top: 16px;
+      font-weight: 600;
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .cta-link:hover { text-decoration: underline; }
+
+    /* Cross Links Pills */
+    .pills { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 20px; }
+    .pill {
+      border: 1px solid var(--border);
+      padding: 10px 20px;
+      border-radius: 99px;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      background: var(--card-bg);
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .pill:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .pl-hero { grid-template-columns: 1fr; text-align: left; gap: 40px; }
+      .pl-hero-art { order: -1; margin-bottom: 16px; }
+      
+      /* Tighter image on Tablet */
+      .pl-hero-art img {
+        max-width: 220px; 
+      }
+      
+      .grid-2 { grid-template-columns: 1fr; gap: 40px; }
+      .pl-hero h1 { font-size: 2.25rem; }
+    }
+
+    /* Mobile Image Constraint */
+    @media (max-width: 600px) {
+      .pl-hero-art img {
+        max-width: 160px; /* Much smaller to prevent screen domination */
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="home-top" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="wrap head-inner">
+      <div class="brand">
+        <a href="/" style="text-decoration:none; color:inherit;">Origin Problem Solving™</a>
+      </div>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="main-nav">
+        <div class="mobile-nav-intro" aria-hidden="true">
+          Menu · Scroll to see all
+        </div>
+        <a href="/#home-top" class="nav-link">Home</a>
+        <a href="/starter-kit/" class="nav-link toolkit-link">OPS Tools™</a>
+        <a href="/leadership-focus-deck/" class="nav-link ops-deck-link">Leadership Focus Deck™</a>
+        <a href="/prove-loop/" class="nav-link active">PROVE Loop™</a>
+        <a href="/system/" class="nav-link">Origin Thinking™ System</a>
+        <a href="/articles/" class="nav-link">Articles</a>
+        <a href="/about/" class="nav-link">About</a>
+        <a href="mailto:hello@originthinking.com" class="nav-link">Contact</a>
+        <a href="/buy" class="nav-link primary" target="_blank" rel="noopener">Buy Book</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <section class="pl-hero">
+      <div class="pl-hero-content">
+        <h1>Daily management that actually holds the gains.</h1>
+        <p>
+          PROVE Loop™ is the daily management side of Origin Thinking™. It gives you a simple Tier 1 and Tier 2 rhythm so your boards, huddles, and leadership behavior hold the gains instead of drifting back to the old normal.
+        </p>
+        <div style="display:flex; gap:16px; flex-wrap:wrap;">
+          <a href="#four-part-system" class="btn primary">See how it fits</a>
+          <a href="/system/" class="btn">See the Origin Thinking™ system</a>
+        </div>
+        <div class="pl-tagline">
+          Part of the Origin Thinking™ operating system: Origin Problem Solving™, OPS Tools™, Origin Leadership Focus Deck™, and PROVE Loop™.
+        </div>
+      </div>
+      <div class="pl-hero-art">
+        <img src="/assets/img/prove-loop.png" alt="PROVE Loop™ logo" loading="lazy">
+      </div>
+    </section>
+
+    <section class="pl-section" id="broken-loop">
+      <h2>The broken loop problem</h2>
+      <p>Many teams are told to run daily huddles and use visual boards. The loop still breaks.</p>
+      <ul class="pl-list">
+        <li>Huddles drift into status updates instead of decisions and next moves.</li>
+        <li>Boards become wallpaper that no one really uses.</li>
+        <li>Problems are logged but not actually worked to conclusion.</li>
+        <li>Ideas are generated but nothing ever sticks.</li>
+      </ul>
+      <div class="pl-callout">
+        PROVE Loop™ exists to fix that broken loop. It keeps real gaps, real experiments, and real leadership behavior in front of people every day at Tier 1 and Tier 2.
+      </div>
+    </section>
+
+    <section class="pl-section" id="four-part-system">
+      <h2>How PROVE Loop™ fits the Origin system</h2>
+      <p>Origin Thinking™ is a complete operating system for practical problem solving and daily management. It has four connected parts that work together so improvements do not fade.</p>
+
+      <div class="grid-4">
+        <article class="card">
+          <h3>Origin Problem Solving™</h3>
+          <p>The method teams use to understand and close important gaps.</p>
+        </article>
+        <article class="card">
+          <h3>OPS Tools™</h3>
+          <p>The worksheets and visuals that make the method concrete and visible in the work.</p>
+        </article>
+        <article class="card">
+          <h3>Origin Leadership Focus Deck™</h3>
+          <p>The leadership practice engine that keeps leaders growing on purpose, one 90 day focus at a time.</p>
+        </article>
+        <article class="card highlight">
+          <h3>PROVE Loop™</h3>
+          <p>The sustain engine that keeps all of it alive in daily work and shows when the system is drifting.</p>
+        </article>
+      </div>
+      <p style="margin-top:32px">
+        A gap shows up in the work. The team uses Origin Problem Solving™ and OPS Tools™ to understand it. Leaders use the Origin Leadership Focus Deck™ in private one to ones to pick a behavior to strengthen. PROVE Loop™ keeps the gap, the working standard, and the leadership focus visible in the Tier 1 and Tier 2 rhythm until the work is stable and the gains are held.
+      </p>
+    </section>
+
+    <section class="pl-section" id="what-it-is">
+      <h2>What PROVE Loop™ looks like in practice</h2>
+      <p>PROVE Loop™ is not a single board or script. It is a simple pattern that ties your Tier 1 and Tier 2 routines together so improvements do not fade away.</p>
+
+      <div class="grid-2">
+        <div>
+          <h3>Tier 1: Front line huddle</h3>
+          <p>At Tier 1, PROVE Loop™ gives each team a fast, disciplined huddle around a simple board.</p>
+          <ul class="pl-list">
+            <li>A Tier 1 board that shows today's context, a few key measures, and the active work to close important gaps.</li>
+            <li>A small number of clear metrics that matter for the team, with visible targets and current results.</li>
+            <li>A short, repeatable huddle routine that walks safety, plan versus actual, gaps, and needed support.</li>
+          </ul>
+          <p>The point is not a fancy board. The point is a consistent rhythm where real gaps are visible and owned by the people who do the work.</p>
+        </div>
+
+        <div>
+          <h3>Tier 2: Help chain</h3>
+          <p>At Tier 2, PROVE Loop™ shifts the focus to support and escalation.</p>
+          <ul class="pl-list">
+            <li>A help chain board that shows which Tier 1 issues need support.</li>
+            <li>Simple rules for when and how problems move up from Tier 1 to Tier 2.</li>
+            <li>A short review that removes obstacles instead of assigning blame or rehashing status.</li>
+          </ul>
+          <p>Tier 2 does not replace problem solving. It protects it. Leaders remove barriers, align support, and make sure the right experiments are moving forward.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="pl-section" id="example">
+      <h2>One simple example</h2>
+      <p>A field crew keeps missing first job start times. The target is wheels rolling by 7:30, but most days they launch closer to 8:30 with rushed starts and finger pointing about traffic, the schedule, or how it has always been.</p>
+      <p>At Tier 1, the supervisor and crew own the problem. The middle manager makes sure time is protected in the schedule and expects the supervisor to use that time for problem solving, not firefighting. At the Tier 1 board, the crew and supervisor use OPS Tools™ to map their real morning flow from dispatch to truck to site. They mark where they wait or redo work and write a simple launch standard together. On time departure by 7:30 becomes the Tier 1 result that PROVE Loop™ will track.</p>
+      <p>Each day they run PROVE Loop™ on that result. They mark yesterday's departure time, call out any miss in plain language, and pick one concrete next move they control to experiment with or resolve. Repeating obstacles outside the crew's control go to Tier 2 using the help chain rules. There the middle manager works on dispatch rules, yard layout, and other system constraints. In the background, the middle manager also uses the supervisor's 90 day leadership focus from the Origin Leadership Focus Deck™ as a lens for coaching. They watch how that behavior shows up in these daily interactions, not only in a quarterly review.</p>
+      <div class="pl-callout">
+        Over the next few weeks the board shows fewer red marks, more days on target, and a cleaner, shared standard for how mornings start. The crew can see that they helped design the new way of working. The middle manager can see real gains in the work itself, not guessed from a report.
+      </div>
+    </section>
+
+    <section class="pl-section" id="how-to-use">
+      <h2>How you can use PROVE Loop™ today</h2>
+
+      <div class="grid-4">
+        <article class="card">
+          <h3>Option 1: Start with the basics</h3>
+          <p>Read the Origin Problem Solving™ book. Use OPS Tools™ to shape and clarify your key measures. Bring the Origin Leadership Focus Deck™ into your one to ones so leadership growth stays tied to real work. This will strengthen your existing boards and huddles even before you install the full PROVE Loop™ system.</p>
+        </article>
+
+        <article class="card">
+          <h3>Option 2: Virtual snapshot</h3>
+          <p>If you want a focused look at your current boards, huddles, and leadership routines, you can use a short virtual snapshot to see where your loop is strong and where it breaks. Availability is limited and only offered when timing and fit line up.</p>
+          <a href="/system/" class="cta-link">Request snapshot &rarr;</a>
+        </article>
+
+        <article class="card">
+          <h3>Option 3: Future install</h3>
+          <p>Full PROVE Loop™ installations will stay limited and future focused. You can join an interest list so that if timing and capacity line up, you already have a place in line.</p>
+          <a href="/#newsletter" class="cta-link">Join interest list &rarr;</a>
+        </article>
+
+        <article class="card">
+          <h3>Option 4: Learn and adapt</h3>
+          <p>You can also use PROVE Loop™ as a lens on your current system. Ask a simple question at your existing huddles: which gaps are visible on the wall, which experiments are active, and what leadership behavior is showing up. Use the answers to decide whether to stay with what you have or to move toward the full Origin Thinking™ system.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="pl-section" style="border:none">
+      <h2>See the full Origin system</h2>
+      <p>PROVE Loop™ works best when it runs with the full Origin system.</p>
+      <div class="pills">
+        <a href="/buy" class="pill" target="_blank" rel="noopener">Read the book</a>
+        <a href="/starter-kit/" class="pill">Download OPS Tools™</a>
+        <a href="/leadership-focus-deck/" class="pill">Explore Leadership Focus Deck™</a>
+        <a href="/system/" class="pill">System overview</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <strong>Origin Thinking™</strong>
+          <small>© 2025 Origin Thinking, LLC. All rights reserved.</small>
+        </div>
+        <div class="footer-links">
+          <a href="/starter-kit/">Tools</a>
+          <a href="/buy" target="_blank" rel="noopener">Buy Book</a>
+          <a href="mailto:hello@originthinking.com" class="nav-link">Contact</a>
+        </div>
+      </div>
+      <div class="holiday-footer-msg">⭐ Wishing you a season of clarity and continuous improvement. ⭐</div>
+      <small class="tm-note" style="display:block; margin-top:16px; font-size:0.8rem; color:var(--text-muted, #999);">
+        Origin Problem Solving™, OPS Tools™, OPS Perception Builder™, PROVE Loop™, OPS Leadership Focus Deck™, Origin Leadership Focus Deck™ and Origin Thinking™ are trademarks of Origin Thinking, LLC.
+      </small>
+    </div>
+  </footer>
+
+  <script src="/app.js"></script>
+</body>
+</html>
