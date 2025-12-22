@@ -346,6 +346,129 @@ body.theme-newyear-2026::before {
     animation: none;
   }
 }
+/* =========================================================
+   Additional Seasonal Themes (additive)
+   - theme-stpatricks
+   - theme-july4
+   - theme-halloween
+   ========================================================= */
+
+/* -------- St. Patrick’s Day -------- */
+body.theme-stpatricks .holiday-banner {
+  display: block;
+  background: linear-gradient(
+    90deg,
+    rgba(46, 125, 50, 0.18),
+    rgba(5, 6, 8, 0.92),
+    rgba(46, 125, 50, 0.18)
+  );
+  color: #fff;
+  border-bottom: 1px solid rgba(46, 125, 50, 0.35);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+
+@keyframes stPatricksDrift {
+  from { background-position: 0 0; }
+  to   { background-position: 0 100%; }
+}
+
+body.theme-stpatricks::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9000;
+
+  background-image: url("/assets/img/seasonal/stpatricks-overlay.png");
+  background-repeat: repeat;
+  background-size: 600px 600px;
+
+  opacity: 0.12;
+  animation: stPatricksDrift 48s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.theme-stpatricks::before { animation: none; }
+}
+
+/* -------- Independence Day -------- */
+body.theme-july4 .holiday-banner {
+  display: block;
+  background: linear-gradient(
+    90deg,
+    rgba(196, 40, 55, 0.14),
+    rgba(5, 6, 8, 0.92),
+    rgba(25, 75, 155, 0.14)
+  );
+  color: #fff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+
+@keyframes july4Drift {
+  from { background-position: 0 0; }
+  to   { background-position: -520px 520px; }
+}
+
+body.theme-july4::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9000;
+
+  background-image: url("/assets/img/seasonal/july4-overlay.png");
+  background-repeat: repeat;
+  background-size: 600px 600px;
+
+  opacity: 0.10;
+  animation: july4Drift 74s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.theme-july4::before { animation: none; }
+}
+
+/* -------- Halloween -------- */
+body.theme-halloween .holiday-banner {
+  display: block;
+  background: linear-gradient(
+    90deg,
+    rgba(140, 80, 20, 0.18),
+    rgba(5, 6, 8, 0.92),
+    rgba(140, 80, 20, 0.18)
+  );
+  color: #fff;
+  border-bottom: 1px solid rgba(140, 80, 20, 0.35);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+
+@keyframes halloweenDrift {
+  from { background-position: 0 0; }
+  to   { background-position: 0 100%; }
+}
+
+body.theme-halloween::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9000;
+
+  background-image: url("/assets/img/seasonal/halloween-overlay.png");
+  background-repeat: repeat;
+  background-size: 600px 600px;
+
+  opacity: 0.13;
+  animation: halloweenDrift 54s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.theme-halloween::before { animation: none; }
+}
 
 /* ────── MOBILE & RESPONSIVE ────── */
 .mobile-cta { display: none; }
