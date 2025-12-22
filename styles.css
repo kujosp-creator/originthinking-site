@@ -248,10 +248,16 @@ a:hover { color: #ff7b1c; }
   font-size: 0.9rem;
 }
 
+.holiday-banner .seasonal-head {
+  display: block;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+}
+
 .holiday-banner .seasonal-sub {
   display: block;
   font-weight: 500;
-  opacity: 0.85;
+  opacity: 0.9;
   margin-top: 2px;
   font-size: 0.92em;
 }
@@ -273,14 +279,12 @@ body.theme-christmas-2025 .holiday-banner {
   background: linear-gradient(90deg, #b91c1c, #c2410c);
   color: #fff;
 }
-
 body.theme-christmas-2025 .holiday-footer-msg { display: block; }
 
 @keyframes snowFall {
   from { background-position: 0 0; }
-  to { background-position: 0 100%; }
+  to   { background-position: 0 100%; }
 }
-
 body.theme-christmas-2025::before {
   content: "";
   position: fixed;
@@ -294,24 +298,19 @@ body.theme-christmas-2025::before {
   animation: snowFall 20s linear infinite;
 }
 
-/* New Year 2026 (gold shimmer + banner) */
+/* New Year 2026 (noticeable but not distracting) */
 body.theme-newyear-2026 .holiday-banner {
   display: block;
   background: rgba(5, 6, 8, 0.86);
   color: #fff;
-  border-bottom: 1px solid rgba(214, 173, 96, 0.28);
+  border-bottom: 1px solid rgba(214, 173, 96, 0.35);
   -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
 }
 
-/* Optional: show footer message in New Year theme too */
-body.theme-newyear-2026 .holiday-footer-msg { 
-  display: block; 
-}
-
 @keyframes nyShimmerDrift {
-  from { background-position: 0 0, 0 0; }
-  to   { background-position: -900px 900px, 0 0; }
+  from { background-position: 0 0; }
+  to   { background-position: -900px 900px; }
 }
 
 body.theme-newyear-2026::before {
@@ -321,30 +320,25 @@ body.theme-newyear-2026::before {
   pointer-events: none;
   z-index: 9000;
 
-  /* More noticeable than Christmas, still not distracting */
-  opacity: 0.26;
-  mix-blend-mode: screen;
+  /* More visible than before, still restrained */
+  opacity: 0.24;
 
-  /* A clear "New Year" signal: soft gold top glow + drifting fine dust */
+  /* Gold dust + soft diagonal sheen */
   background-image:
-    radial-gradient(900px 320px at 50% 0%,
-      rgba(214, 173, 96, 0.22) 0%,
-      rgba(214, 173, 96, 0.10) 35%,
-      rgba(214, 173, 96, 0.00) 70%),
-    radial-gradient(1px 1px at 10% 20%, rgba(214, 173, 96, 0.60) 0%, rgba(214, 173, 96, 0) 60%),
-    radial-gradient(1px 1px at 35% 75%, rgba(214, 173, 96, 0.50) 0%, rgba(214, 173, 96, 0) 62%),
-    radial-gradient(1px 1px at 70% 30%, rgba(214, 173, 96, 0.45) 0%, rgba(214, 173, 96, 0) 62%),
-    radial-gradient(1px 1px at 85% 65%, rgba(214, 173, 96, 0.42) 0%, rgba(214, 173, 96, 0) 62%),
-    radial-gradient(1px 1px at 50% 45%, rgba(214, 173, 96, 0.38) 0%, rgba(214, 173, 96, 0) 62%),
-    linear-gradient(120deg, rgba(214, 173, 96, 0.14), rgba(214, 173, 96, 0) 55%);
+    radial-gradient(1.6px 1.6px at 12% 22%, rgba(214, 173, 96, 0.60) 0%, rgba(214, 173, 96, 0) 62%),
+    radial-gradient(1.4px 1.4px at 28% 78%, rgba(214, 173, 96, 0.52) 0%, rgba(214, 173, 96, 0) 62%),
+    radial-gradient(1.5px 1.5px at 66% 34%, rgba(214, 173, 96, 0.46) 0%, rgba(214, 173, 96, 0) 62%),
+    radial-gradient(1.3px 1.3px at 86% 64%, rgba(214, 173, 96, 0.42) 0%, rgba(214, 173, 96, 0) 62%),
+    radial-gradient(1.2px 1.2px at 52% 48%, rgba(214, 173, 96, 0.36) 0%, rgba(214, 173, 96, 0) 62%),
+    linear-gradient(120deg, rgba(214, 173, 96, 0.16), rgba(214, 173, 96, 0) 58%);
 
-  background-size: 900px 900px, 900px 900px;
+  background-size: 900px 900px;
   background-repeat: repeat;
-
-  animation: nyShimmerDrift 24s linear infinite;
+  animation: nyShimmerDrift 26s linear infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
+  body.theme-christmas-2025::before,
   body.theme-newyear-2026::before { animation: none; }
 }
 
