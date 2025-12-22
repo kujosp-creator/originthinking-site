@@ -298,7 +298,7 @@ body.theme-christmas-2025::before {
   animation: snowFall 20s linear infinite;
 }
 
-/* New Year 2026 (confetti + soft glow + banner) */
+/* New Year 2026 (subtle champagne sparkle + banner) */
 body.theme-newyear-2026 .holiday-banner {
   display: block;
   background: rgba(5, 6, 8, 0.86);
@@ -308,11 +308,10 @@ body.theme-newyear-2026 .holiday-banner {
   backdrop-filter: blur(6px);
 }
 
-/* Keep footer message hidden in New Year theme unless you add one later. */
-
-@keyframes nyConfettiDrift {
-  from { background-position: 0 0, 0 0; }
-  to   { background-position: -900px 900px, 900px -900px; }
+/* Overlay drift (same concept as Christmas, different asset + diagonal motion) */
+@keyframes newYearDrift {
+  from { background-position: 0 0; }
+  to   { background-position: -600px 600px; }
 }
 
 body.theme-newyear-2026::before {
@@ -322,45 +321,17 @@ body.theme-newyear-2026::before {
   pointer-events: none;
   z-index: 9000;
 
-  /* Make it clearly visible but not loud */
-  opacity: 0.22;
-
-  /* Two-layer overlay:
-     1) soft diagonal “celebration” glow
-     2) sparse confetti (dots + tiny dashes), NOT flakes
-  */
-  background-image:
-    linear-gradient(135deg,
-      rgba(214, 173, 96, 0.14) 0%,
-      rgba(214, 173, 96, 0.00) 55%,
-      rgba(214, 173, 96, 0.10) 100%
-    ),
-    radial-gradient(2px 2px at 8% 22%,  rgba(214, 173, 96, 0.65) 0%, rgba(214, 173, 96, 0) 70%),
-    radial-gradient(2px 2px at 28% 78%, rgba(214, 173, 96, 0.55) 0%, rgba(214, 173, 96, 0) 70%),
-    radial-gradient(2px 2px at 62% 32%, rgba(214, 173, 96, 0.50) 0%, rgba(214, 173, 96, 0) 70%),
-    radial-gradient(2px 2px at 86% 64%, rgba(214, 173, 96, 0.45) 0%, rgba(214, 173, 96, 0) 70%),
-    linear-gradient(0deg, rgba(214, 173, 96, 0.22), rgba(214, 173, 96, 0) 60%),
-    repeating-linear-gradient(90deg,
-      rgba(214, 173, 96, 0.22) 0px,
-      rgba(214, 173, 96, 0.22) 2px,
-      rgba(214, 173, 96, 0)   2px,
-      rgba(214, 173, 96, 0)   70px
-    );
-
-  /* Sizes tuned so it reads as “New Year overlay” on a dark hero */
-  background-size:
-    900px 900px,
-    520px 520px,
-    520px 520px,
-    520px 520px,
-    520px 520px,
-    900px 900px,
-    900px 900px;
-
+  /* New Year overlay image tile */
+  background-image: url("/assets/img/newyear-overlay.png");
   background-repeat: repeat;
-  mix-blend-mode: screen;
-  animation: nyConfettiDrift 28s linear infinite;
+  background-size: 600px 600px;
+
+  /* Make it clearly present but not noisy */
+  opacity: 0.14;
+
+  animation: newYearDrift 26s linear infinite;
 }
+
 
 @media (prefers-reduced-motion: reduce) {
   body.theme-newyear-2026::before { animation: none; }
