@@ -25,9 +25,10 @@ document.addEventListener('DOMContentLoaded', function () {
  *     ?theme=christmas2025
  *     ?theme=off
  * - Schedule (local time):
- *     Christmas: through 2025-12-26
- *     New Year:  2025-12-27 through 2026-01-31
- *     Default:   2026-02-01 onward
+ *     Christmas: day after Thanksgiving through Dec 25 (each year)
+ *     New Year:  Dec 26 through Jan 2 (each year, spans year boundary)
+ *     Others:    per windows below
+ *     Default:   outside seasonal windows
  */
 function initSeasonalTheme() {
   var body = document.body;
@@ -126,24 +127,21 @@ if (forced === 'halloween') {
   // Scheduled modes (local time)
   var now = new Date();
 
-  // Year-robust windows (local time)
+// Year-robust windows (local time)
 var y = now.getFullYear();
 
-// Christmas: through Dec 26 of the current year (matches your current behavior)
-var endChristmas = new Date(y, 11, 26, 23, 59, 59);
+// Christmas: day after Thanksgiving through Dec 25
+// Note: day-after-Thanksgiving requires a calculation (see below).
+// If you are not calculating it yet, you cannot truly match "day after Thanksgiving" automatically.
+var endChristmas = new Date(y, 11, 25, 23, 59, 59); // Dec 25
 
-// New Year: Dec 27 of current year through Jan 31 of next year (matches your current behavior)
-var startNewYear = new Date(y, 11, 27, 0, 0, 0);
-var endNewYear   = new Date(y + 1, 0, 31, 23, 59, 59);
+// New Year: Dec 26 of current year through Jan 2 of next year
+var startNewYear = new Date(y, 11, 26, 0, 0, 0);    // Dec 26
+var endNewYear   = new Date(y + 1, 0, 2, 23, 59, 59); // Jan 2
 
-  if (now <= endChristmas) {
-    applyChristmas();
-    return;
-  }
-  if (now >= startNewYear && now <= endNewYear) {
-    applyNewYear();
-    return;
-  }
+if (now <= endChristmas) { applyChristmas(); return; }
+if (now >= startNewYear && now <= endNewYear) { applyNewYear(); return; }
+
 // Additional scheduled themes (do not change Christmas/New Year logic above)
 
 // Helper: month is 0-based (0=Jan). Local time.
