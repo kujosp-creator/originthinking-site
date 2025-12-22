@@ -126,9 +126,15 @@ if (forced === 'halloween') {
   // Scheduled modes (local time)
   var now = new Date();
 
-  var endChristmas = new Date(2025, 11, 26, 23, 59, 59); // Dec 26, 2025
-  var startNewYear = new Date(2025, 11, 27, 0, 0, 0);   // Dec 27, 2025
-  var endNewYear   = new Date(2026, 0, 31, 23, 59, 59); // Jan 31, 2026
+  // Year-robust windows (local time)
+var y = now.getFullYear();
+
+// Christmas: through Dec 26 of the current year (matches your current behavior)
+var endChristmas = new Date(y, 11, 26, 23, 59, 59);
+
+// New Year: Dec 27 of current year through Jan 31 of next year (matches your current behavior)
+var startNewYear = new Date(y, 11, 27, 0, 0, 0);
+var endNewYear   = new Date(y + 1, 0, 31, 23, 59, 59);
 
   if (now <= endChristmas) {
     applyChristmas();
