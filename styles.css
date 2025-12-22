@@ -338,7 +338,7 @@ body.theme-newyear-2026::before {
   background-size: 600px 600px;
 
   opacity: 0.14;
-  animation: newYearDrift 34s linear infinite;
+  animation: newYearDrift 42s linear infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
