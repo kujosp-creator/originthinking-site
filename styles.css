@@ -298,19 +298,21 @@ body.theme-christmas-2025::before {
   animation: snowFall 20s linear infinite;
 }
 
-/* New Year 2026 (noticeable but not distracting) */
+/* New Year 2026 (confetti + soft glow + banner) */
 body.theme-newyear-2026 .holiday-banner {
   display: block;
   background: rgba(5, 6, 8, 0.86);
   color: #fff;
-  border-bottom: 1px solid rgba(214, 173, 96, 0.35);
+  border-bottom: 1px solid rgba(214, 173, 96, 0.28);
   -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
 }
 
-@keyframes nyShimmerDrift {
-  from { background-position: 0 0; }
-  to   { background-position: -900px 900px; }
+/* Keep footer message hidden in New Year theme unless you add one later. */
+
+@keyframes nyConfettiDrift {
+  from { background-position: 0 0, 0 0; }
+  to   { background-position: -900px 900px, 900px -900px; }
 }
 
 body.theme-newyear-2026::before {
@@ -320,25 +322,47 @@ body.theme-newyear-2026::before {
   pointer-events: none;
   z-index: 9000;
 
-  /* More visible than before, still restrained */
-  opacity: 0.24;
+  /* Make it clearly visible but not loud */
+  opacity: 0.22;
 
-  /* Gold dust + soft diagonal sheen */
+  /* Two-layer overlay:
+     1) soft diagonal “celebration” glow
+     2) sparse confetti (dots + tiny dashes), NOT flakes
+  */
   background-image:
-    radial-gradient(1.6px 1.6px at 12% 22%, rgba(214, 173, 96, 0.60) 0%, rgba(214, 173, 96, 0) 62%),
-    radial-gradient(1.4px 1.4px at 28% 78%, rgba(214, 173, 96, 0.52) 0%, rgba(214, 173, 96, 0) 62%),
-    radial-gradient(1.5px 1.5px at 66% 34%, rgba(214, 173, 96, 0.46) 0%, rgba(214, 173, 96, 0) 62%),
-    radial-gradient(1.3px 1.3px at 86% 64%, rgba(214, 173, 96, 0.42) 0%, rgba(214, 173, 96, 0) 62%),
-    radial-gradient(1.2px 1.2px at 52% 48%, rgba(214, 173, 96, 0.36) 0%, rgba(214, 173, 96, 0) 62%),
-    linear-gradient(120deg, rgba(214, 173, 96, 0.16), rgba(214, 173, 96, 0) 58%);
+    linear-gradient(135deg,
+      rgba(214, 173, 96, 0.14) 0%,
+      rgba(214, 173, 96, 0.00) 55%,
+      rgba(214, 173, 96, 0.10) 100%
+    ),
+    radial-gradient(2px 2px at 8% 22%,  rgba(214, 173, 96, 0.65) 0%, rgba(214, 173, 96, 0) 70%),
+    radial-gradient(2px 2px at 28% 78%, rgba(214, 173, 96, 0.55) 0%, rgba(214, 173, 96, 0) 70%),
+    radial-gradient(2px 2px at 62% 32%, rgba(214, 173, 96, 0.50) 0%, rgba(214, 173, 96, 0) 70%),
+    radial-gradient(2px 2px at 86% 64%, rgba(214, 173, 96, 0.45) 0%, rgba(214, 173, 96, 0) 70%),
+    linear-gradient(0deg, rgba(214, 173, 96, 0.22), rgba(214, 173, 96, 0) 60%),
+    repeating-linear-gradient(90deg,
+      rgba(214, 173, 96, 0.22) 0px,
+      rgba(214, 173, 96, 0.22) 2px,
+      rgba(214, 173, 96, 0)   2px,
+      rgba(214, 173, 96, 0)   70px
+    );
 
-  background-size: 900px 900px;
+  /* Sizes tuned so it reads as “New Year overlay” on a dark hero */
+  background-size:
+    900px 900px,
+    520px 520px,
+    520px 520px,
+    520px 520px,
+    520px 520px,
+    900px 900px,
+    900px 900px;
+
   background-repeat: repeat;
-  animation: nyShimmerDrift 26s linear infinite;
+  mix-blend-mode: screen;
+  animation: nyConfettiDrift 28s linear infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  body.theme-christmas-2025::before,
   body.theme-newyear-2026::before { animation: none; }
 }
 
