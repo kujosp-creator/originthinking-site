@@ -42,9 +42,12 @@ function initSeasonalTheme() {
   var forced = (params.get('theme') || '').toLowerCase();
 
   function clearThemes() {
-    body.classList.remove('theme-christmas-2025');
-    body.classList.remove('theme-newyear-2026');
-  }
+  body.classList.remove('theme-christmas-2025');
+  body.classList.remove('theme-newyear-2026');
+  body.classList.remove('theme-stpatricks');
+  body.classList.remove('theme-july4');
+  body.classList.remove('theme-halloween');
+}
 
   function setBanner(html) {
     var banner = document.querySelector('.holiday-banner');
@@ -66,6 +69,32 @@ function initSeasonalTheme() {
       '<span class="seasonal-sub">Build systems that last beyond January.</span>'
     );
   }
+function applyStPatricks() {
+  clearThemes();
+  body.classList.add('theme-stpatricks');
+  setBanner(
+    '<span class="seasonal-head">Luck Is Not a Strategy</span>' +
+    '<span class="seasonal-sub">Standards beat superstition. Every time.</span>'
+  );
+}
+
+function applyJuly4() {
+  clearThemes();
+  body.classList.add('theme-july4');
+  setBanner(
+    '<span class="seasonal-head">Freedom Comes From Clarity.</span>' +
+    '<span class="seasonal-sub">Evidence beats opinion.</span>'
+  );
+}
+
+function applyHalloween() {
+  clearThemes();
+  body.classList.add('theme-halloween');
+  setBanner(
+    '<span class="seasonal-head">The Scariest Problems Are the Ones You Can’t See</span>' +
+    '<span class="seasonal-sub">Expose the cause. Eliminate it.</span>'
+  );
+}
 
   // Forced modes for Cloudflare preview testing
   if (forced === 'off') {
@@ -81,6 +110,18 @@ function initSeasonalTheme() {
     applyNewYear();
     return;
   }
+  if (forced === 'stpatricks') {
+  applyStPatricks();
+  return;
+}
+if (forced === 'july4') {
+  applyJuly4();
+  return;
+}
+if (forced === 'halloween') {
+  applyHalloween();
+  return;
+}
 
   // Scheduled modes (local time)
   var now = new Date();
@@ -97,6 +138,33 @@ function initSeasonalTheme() {
     applyNewYear();
     return;
   }
+// Additional scheduled themes (do not change Christmas/New Year logic above)
+
+// Helper: month is 0-based (0=Jan). Local time.
+function inWindow(mStart, dStart, mEnd, dEnd) {
+  var y = now.getFullYear();
+  var start = new Date(y, mStart, dStart, 0, 0, 0);
+  var end   = new Date(y, mEnd, dEnd, 23, 59, 59);
+  return now >= start && now <= end;
+}
+
+// St. Patrick’s: 2 weeks leading up + day of (Mar 3–Mar 17)
+if (inWindow(2, 3, 2, 17)) {
+  applyStPatricks();
+  return;
+}
+
+// July 4: 2 weeks leading up + the entire week of celebrations (Jun 20–Jul 7)
+if (inWindow(5, 20, 6, 7)) {
+  applyJuly4();
+  return;
+}
+
+// Halloween: entire month of October (Oct 1–Oct 31)
+if (inWindow(9, 1, 9, 31)) {
+  applyHalloween();
+  return;
+}
 
   // Default: no seasonal theme
   clearThemes();
