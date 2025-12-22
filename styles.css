@@ -240,7 +240,6 @@ a:hover { color: #ff7b1c; }
    - theme-newyear-2026
    OPS Tools™ (/starter-kit/) is excluded by app.js.
 */
-
 .holiday-banner {
   display: none;
   text-align: center;
@@ -266,27 +265,23 @@ a:hover { color: #ff7b1c; }
 }
 
 /* Default: no overlay */
-body::before {
-  content: none;
-}
+body::before { content: none; }
 
 /* Christmas 2025 (snow + banner) */
-.theme-christmas-2025 .holiday-banner {
+body.theme-christmas-2025 .holiday-banner {
   display: block;
   background: linear-gradient(90deg, #b91c1c, #c2410c);
   color: #fff;
 }
 
-.theme-christmas-2025 .holiday-footer-msg {
-  display: block;
-}
+body.theme-christmas-2025 .holiday-footer-msg { display: block; }
 
 @keyframes snowFall {
   from { background-position: 0 0; }
-  to   { background-position: 0 100%; }
+  to { background-position: 0 100%; }
 }
 
-.theme-christmas-2025 body::before {
+body.theme-christmas-2025::before {
   content: "";
   position: fixed;
   inset: 0;
@@ -300,7 +295,7 @@ body::before {
 }
 
 /* New Year 2026 (diagonal gold shimmer + banner) */
-.theme-newyear-2026 .holiday-banner {
+body.theme-newyear-2026 .holiday-banner {
   display: block;
   background: rgba(5, 6, 8, 0.86);
   color: #fff;
@@ -309,20 +304,22 @@ body::before {
   backdrop-filter: blur(6px);
 }
 
-/* Footer message stays hidden in New Year theme unless added later */
+/* Footer message stays hidden in New Year theme unless you add a new message later. */
 
 @keyframes nyShimmerDrift {
   from { background-position: 0 0; }
-  to   { background-position: -800px 800px; }
+  to { background-position: -800px 800px; } /* diagonal drift */
 }
 
-.theme-newyear-2026 body::before {
+body.theme-newyear-2026::before {
   content: "";
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: 9000;
   opacity: 0.16;
+
+  /* Fine gold dust. No bursts, no flicker. */
   background-image:
     radial-gradient(1px 1px at 10% 20%, rgba(214, 173, 96, 0.55) 0%, rgba(214, 173, 96, 0) 60%),
     radial-gradient(1px 1px at 35% 75%, rgba(214, 173, 96, 0.45) 0%, rgba(214, 173, 96, 0) 62%),
@@ -336,10 +333,8 @@ body::before {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .theme-christmas-2025 body::before,
-  .theme-newyear-2026 body::before {
-    animation: none;
-  }
+  body.theme-christmas-2025::before,
+  body.theme-newyear-2026::before { animation: none; }
 }
 
 /* ────── MOBILE & RESPONSIVE ────── */
