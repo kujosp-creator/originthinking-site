@@ -65,7 +65,7 @@ function initSeasonalTheme() {
     clearThemes();
     body.classList.add('theme-newyear-2026');
     setBanner(
-      '<span class="seasonal-head">Start 2026 With Clear Direction</span>' +
+      '<span class="seasonal-head">Start the New Year With Clear Direction</span>' +
       '<span class="seasonal-sub">Build systems that last beyond January.</span>'
     );
   }
