@@ -1,0 +1,14 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+
+# Logs and temp
+*.log
+*.tmp
+
+# Node (future-proof)
+node_modules/
