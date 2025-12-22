@@ -380,7 +380,7 @@ body.theme-stpatricks::before {
   pointer-events: none;
   z-index: 9000;
 
-  background-image: url("/assets/img/seasonal/stpatricks-overlay.png");
+  background-image: url("/assets/img/stpatricks-overlay.png");
   background-repeat: repeat;
   background-size: 600px 600px;
 
@@ -419,7 +419,7 @@ body.theme-july4::before {
   pointer-events: none;
   z-index: 9000;
 
-  background-image: url("/assets/img/seasonal/july4-overlay.png");
+  background-image: url("/assets/img/july4-overlay.png");
   background-repeat: repeat;
   background-size: 600px 600px;
 
@@ -458,7 +458,7 @@ body.theme-halloween::before {
   pointer-events: none;
   z-index: 9000;
 
-  background-image: url("/assets/img/seasonal/halloween-overlay.png");
+  background-image: url("/assets/img/halloween-overlay.png");
   background-repeat: repeat;
   background-size: 600px 600px;
 
