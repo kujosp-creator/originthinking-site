@@ -126,21 +126,70 @@ if (forced === 'halloween') {
 
   // Scheduled modes (local time)
   var now = new Date();
+  var y = now.getFullYear();
 
-// Year-robust windows (local time)
-var y = now.getFullYear();
+  // Helper: month is 0-based (0=Jan). Local time.
+  function inWindow(mStart, dStart, mEnd, dEnd) {
+    var start = new Date(y, mStart, dStart, 0, 0, 0);
+    var end   = new Date(y, mEnd, dEnd, 23, 59, 59);
+    return now >= start && now <= end;
+  }
 
-// Christmas: day after Thanksgiving through Dec 25
-// Note: day-after-Thanksgiving requires a calculation (see below).
-// If you are not calculating it yet, you cannot truly match "day after Thanksgiving" automatically.
-var endChristmas = new Date(y, 11, 25, 23, 59, 59); // Dec 25
+  // Thanksgiving (US): 4th Thursday in November
+  function thanksgivingDate(year) {
+    // Nov 1
+    var d = new Date(year, 10, 1, 0, 0, 0);
+    // Find first Thursday in Nov (0=Sun ... 4=Thu)
+    var day = d.getDay();
+    var offsetToThu = (4 - day + 7) % 7;
+    d.setDate(1 + offsetToThu);
+    // Add 3 weeks to get 4th Thursday
+    d.setDate(d.getDate() + 21);
+    return d;
+  }
 
-// New Year: Dec 26 of current year through Jan 2 of next year
-var startNewYear = new Date(y, 11, 26, 0, 0, 0);    // Dec 26
-var endNewYear   = new Date(y + 1, 0, 2, 23, 59, 59); // Jan 2
+  // Christmas: day after Thanksgiving through Dec 25 (each year)
+  var thanksgiving = thanksgivingDate(y);
+  var startChristmas = new Date(y, 10, thanksgiving.getDate() + 1, 0, 0, 0); // Nov (month 10), +1 day
+  var endChristmas   = new Date(y, 11, 25, 23, 59, 59); // Dec 25
 
-if (now <= endChristmas) { applyChristmas(); return; }
-if (now >= startNewYear && now <= endNewYear) { applyNewYear(); return; }
+  // New Year: Dec 26 through Jan 2 (spans year boundary)
+  var startNewYear = new Date(y, 11, 26, 0, 0, 0);       // Dec 26 current year
+  var endNewYear   = new Date(y + 1, 0, 2, 23, 59, 59);  // Jan 2 next year
+
+  // Apply in priority order
+  if (now >= startNewYear && now <= endNewYear) {
+    applyNewYear();
+    return;
+  }
+
+  if (now >= startChristmas && now <= endChristmas) {
+    applyChristmas();
+    return;
+  }
+
+  // St. Patrick’s: 2 weeks leading up + day of (Mar 3–Mar 17)
+  if (inWindow(2, 3, 2, 17)) {
+    applyStPatricks();
+    return;
+  }
+
+  // July 4: 2 weeks leading up + entire week of celebrations (Jun 20–Jul 7)
+  if (inWindow(5, 20, 6, 7)) {
+    applyJuly4();
+    return;
+  }
+
+  // Halloween: entire month of October (Oct 1–Oct 31)
+  if (inWindow(9, 1, 9, 31)) {
+    applyHalloween();
+    return;
+  }
+
+  // Default: no seasonal theme
+  clearThemes();
+  setBanner('');
+
 
 // Additional scheduled themes (do not change Christmas/New Year logic above)
 
