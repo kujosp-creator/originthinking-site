@@ -240,6 +240,7 @@ a:hover { color: #ff7b1c; }
    - theme-newyear-2026
    OPS Tools™ (/starter-kit/) is excluded by app.js.
 */
+
 .holiday-banner {
   display: none;
   text-align: center;
@@ -247,6 +248,7 @@ a:hover { color: #ff7b1c; }
   font-weight: 700;
   font-size: 0.9rem;
 }
+
 .holiday-banner .seasonal-sub {
   display: block;
   font-weight: 500;
@@ -254,6 +256,7 @@ a:hover { color: #ff7b1c; }
   margin-top: 2px;
   font-size: 0.92em;
 }
+
 .holiday-footer-msg {
   display: none;
   text-align: center;
@@ -263,7 +266,9 @@ a:hover { color: #ff7b1c; }
 }
 
 /* Default: no overlay */
-body::before { content: none; }
+body::before {
+  content: none;
+}
 
 /* Christmas 2025 (snow + banner) */
 .theme-christmas-2025 .holiday-banner {
@@ -271,12 +276,16 @@ body::before { content: none; }
   background: linear-gradient(90deg, #b91c1c, #c2410c);
   color: #fff;
 }
-.theme-christmas-2025 .holiday-footer-msg { display: block; }
+
+.theme-christmas-2025 .holiday-footer-msg {
+  display: block;
+}
 
 @keyframes snowFall {
   from { background-position: 0 0; }
   to   { background-position: 0 100%; }
 }
+
 .theme-christmas-2025 body::before {
   content: "";
   position: fixed;
@@ -299,12 +308,14 @@ body::before { content: none; }
   -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
 }
-/* Footer message stays hidden in New Year theme unless you add a new message later. */
+
+/* Footer message stays hidden in New Year theme unless added later */
 
 @keyframes nyShimmerDrift {
   from { background-position: 0 0; }
-  to   { background-position: -800px 800px; } /* diagonal drift ↗ */
+  to   { background-position: -800px 800px; }
 }
+
 .theme-newyear-2026 body::before {
   content: "";
   position: fixed;
@@ -312,8 +323,6 @@ body::before { content: none; }
   pointer-events: none;
   z-index: 9000;
   opacity: 0.16;
-
-  /* Fine gold dust. No bursts, no flicker. */
   background-image:
     radial-gradient(1px 1px at 10% 20%, rgba(214, 173, 96, 0.55) 0%, rgba(214, 173, 96, 0) 60%),
     radial-gradient(1px 1px at 35% 75%, rgba(214, 173, 96, 0.45) 0%, rgba(214, 173, 96, 0) 62%),
@@ -328,7 +337,9 @@ body::before { content: none; }
 
 @media (prefers-reduced-motion: reduce) {
   .theme-christmas-2025 body::before,
-  .theme-newyear-2026 body::before { animation: none; }
+  .theme-newyear-2026 body::before {
+    animation: none;
+  }
 }
 
 /* ────── MOBILE & RESPONSIVE ────── */
