@@ -15,6 +15,9 @@
   frame-ancestors 'none';
   upgrade-insecure-requests;
   block-all-mixed-content;
+  /ops-focus-deck/start*
+  X-Robots-Tag: noindex, nofollow
+  Cache-Control: public, max-age=3600
 
   script-src
     'self'
