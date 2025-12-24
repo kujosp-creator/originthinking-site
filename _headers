@@ -15,7 +15,7 @@
   frame-ancestors 'none';
   upgrade-insecure-requests;
   block-all-mixed-content;
-  /ops-focus-deck/start*
+  /leadership-focus-deck/start*
   X-Robots-Tag: noindex, nofollow
   Cache-Control: public, max-age=3600
 
