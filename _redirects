@@ -27,27 +27,21 @@
 /lean-tools/            /starter-kit/ 301
 /problem-solving-tools  /starter-kit/ 301
 /lean-problem-solving-tools /starter-kit/ 301
-/ops-focus-deck/start              /ops-focus-deck/start/  301
-/ops-focus-deck/start/index.html   /ops-focus-deck/start/  301
-/ops-focus-deck/START              /ops-focus-deck/start/  301
-/ops-focus-deck/Start              /ops-focus-deck/start/  301
+# Legacy OPS Focus Deck QR routes -> NEW Leadership Focus Deck Start
 /ops-focus-deck/start              /leadership-focus-deck/start/ 301
+/ops-focus-deck/start/             /leadership-focus-deck/start/ 301
 /ops-focus-deck/start/index.html   /leadership-focus-deck/start/ 301
 /ops-focus-deck/START              /leadership-focus-deck/start/ 301
 /ops-focus-deck/Start              /leadership-focus-deck/start/ 301
 
-/leadership-focus-deck/start       /leadership-focus-deck/start/ 301
-/leadership-focus-deck/start/index.html /leadership-focus-deck/start/ 301
-
-/ops-focus-deck/start/  /ops-focus-deck/start/index.html  200
+# Canonicalize Leadership Focus Deck Start
+/leadership-focus-deck/start              /leadership-focus-deck/start/ 301
+/leadership-focus-deck/start/index.html   /leadership-focus-deck/start/ 301
 
 # Method anchor helpers
 /lean-problem-solving   /#method       301
 /lean-problem-solving/  /#method       301
 /lean                   /#method       301
-
-# Lean Quest canonical slash
-/lean-quest             /lean-quest/   301
 
 # Book / buy vanity routes
 /book           https://www.amazon.com/Origin-Problem-Solving-Practical-Approach-ebook/dp/B0F8H9NCVV?ref_=ast_author_mpb 301
