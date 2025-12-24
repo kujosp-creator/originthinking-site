@@ -10,3 +10,5 @@
 /leadership-focus-deck/start*
   X-Robots-Tag: noindex, nofollow
   Cache-Control: public, max-age=3600
+/leadership-focus-deck/start/*
+  Cache-Control: no-store
