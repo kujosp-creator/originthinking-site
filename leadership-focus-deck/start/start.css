@@ -49,9 +49,11 @@ body.ops-start{
   overflow:hidden;
   border-bottom: 1px solid var(--border);
 }
+
 .hero-media{
   position:absolute;
   inset:0;
+  z-index: 0; /* ADD */
 
   /* IMAGE FIRST — no debate */
   background-image: url("/assets/img/ops-focus-deck/hero-cave.png");
@@ -59,12 +61,10 @@ body.ops-start{
   background-position: center 20%;
   background-repeat: no-repeat;
 
-  /* REMOVE image suppression */
   filter: none;
   transform: none;
-
-  /* Add contrast via overlay, not filters */
 }
+
 .hero-media::after{
   content:"";
   position:absolute;
@@ -75,15 +75,13 @@ body.ops-start{
       rgba(204,85,0,.18),
       transparent 60%
     ),
-    linear-gradient(
-      to bottom,
-      rgba(0,0,0,.25),
-      rgba(0,0,0,.75)
-    );
+    linear-gradient(to bottom, rgba(0,0,0,.25), rgba(0,0,0,.75));
 }
 
+/* ADD THIS BLOCK IF NOT ALREADY PRESENT */
 .hero-inner{
-  position:relative;
+  position: relative;
+  z-index: 1;
 }
 
 .brand{
