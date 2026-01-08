@@ -232,6 +232,21 @@ a:hover { color: #ff7b1c; }
 .footer-brand strong { color: var(--fg); }
 .footer-links a { margin-left: 20px; color: var(--muted); }
 .footer-links a:hover { color: var(--accent); }
+/* =========================================================
+   Leadership Focus Deck page: stacked images helper
+   ========================================================= */
+.deck-image-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.deck-image-stack img {
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.65);
+}
 
 /* ────── SEASONAL THEMES (Controlled via app.js) ──────
    Base = no seasonal banner, no overlay.
