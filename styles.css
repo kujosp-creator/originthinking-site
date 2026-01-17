@@ -224,6 +224,76 @@ a:hover { color: #ff7b1c; }
   min-height: 200px; /* Force height to prevent collapse */
   display: block; 
 }
+/* MailerLite embed: generic styling (works for any form id) */
+.newsletter-embed .ml-form-embedContainer {
+  width: 100%;
+}
+
+.newsletter-embed .ml-form-embedWrapper.embedForm {
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 24px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.10);
+  backdrop-filter: blur(10px);
+}
+
+/* Make text readable (your screenshot shows white text on white background) */
+.newsletter-embed .ml-form-embedContent h4 {
+  margin: 0 0 6px 0;
+  color: #ffffff;
+  font-size: 1.25rem;
+  line-height: 1.2;
+}
+
+.newsletter-embed .ml-form-embedContent p {
+  margin: 0 0 16px 0;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.4;
+}
+
+/* Inputs */
+.newsletter-embed .ml-form-fieldRow input[type="email"],
+.newsletter-embed .ml-form-fieldRow input[type="text"] {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.18);
+  background: rgba(15,17,19,0.55);
+  color: #ffffff;
+  font: inherit;
+}
+
+.newsletter-embed .ml-form-fieldRow input::placeholder {
+  color: rgba(255,255,255,0.65);
+}
+
+/* Button */
+.newsletter-embed .ml-form-embedSubmit button.primary {
+  width: 100%;
+  margin-top: 12px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 0;
+  background: var(--accent, #CC5500);
+  color: #ffffff;
+  font-weight: 700;
+  font: inherit;
+  cursor: pointer;
+}
+
+.newsletter-embed .ml-form-embedSubmit button.primary:hover {
+  filter: brightness(1.05);
+}
+
+/* Success state */
+.newsletter-embed .ml-form-successBody h4,
+.newsletter-embed .ml-form-successBody p {
+  color: #ffffff;
+}
 
 /* ────── FOOTER ────── */
 .site-footer { border-top: 1px solid var(--border); padding: 60px 0 20px; margin-top: 40px; font-size: 0.9rem; color: var(--muted); }
