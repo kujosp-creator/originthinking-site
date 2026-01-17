@@ -356,6 +356,122 @@ a:hover { color: #ff7b1c; }
 .newsletter-embed .ml-form-fieldRow input::placeholder{
   color: rgba(15,17,19,0.55);
 }
+/* Premium newsletter module */
+.newsletter-embed .newsletter-inner{
+  display:flex;
+  justify-content:center;
+}
+
+.newsletter-embed .ml-form-embedWrapper.embedForm{
+  width:100%;
+  max-width:640px;
+
+  /* One cohesive surface */
+  background: linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.04));
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 18px;
+
+  padding: 26px 26px 22px;
+  box-shadow:
+    0 14px 34px rgba(0,0,0,0.35),
+    inset 0 1px 0 rgba(255,255,255,0.06);
+
+  backdrop-filter: blur(10px);
+}
+
+/* Kill the “white rectangle” look if MailerLite wraps content */
+.newsletter-embed .ml-form-embedBody{
+  background: transparent !important;
+  padding: 0 !important;
+}
+
+/* Headline + subhead */
+.newsletter-embed .ml-form-embedContent{
+  margin: 0 0 16px 0;
+}
+
+.newsletter-embed .ml-form-embedContent h4{
+  margin: 0 0 6px 0;
+  color: #ffffff !important;
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.newsletter-embed .ml-form-embedContent p{
+  margin: 0;
+  color: rgba(255,255,255,0.78) !important;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+/* Field styling */
+.newsletter-embed .ml-form-fieldRow{
+  margin: 0;
+}
+
+.newsletter-embed .ml-form-fieldRow input[type="email"],
+.newsletter-embed .ml-form-fieldRow input.form-control{
+  width: 100%;
+  height: 54px;
+
+  background: rgba(15,17,19,0.45) !important;
+  border: 1px solid rgba(255,255,255,0.14) !important;
+  border-radius: 14px !important;
+
+  padding: 0 14px !important;
+  color: #ffffff !important;
+
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);
+}
+
+.newsletter-embed .ml-form-fieldRow input::placeholder{
+  color: rgba(255,255,255,0.65) !important;
+}
+
+/* Focus state (looks intentional) */
+.newsletter-embed .ml-form-fieldRow input:focus{
+  outline: none;
+  border-color: rgba(204,85,0,0.65) !important;
+  box-shadow:
+    0 0 0 4px rgba(204,85,0,0.18),
+    inset 0 1px 0 rgba(255,255,255,0.05);
+}
+
+/* Button */
+.newsletter-embed .ml-form-embedSubmit{
+  margin: 12px 0 0 0 !important;
+}
+
+.newsletter-embed .ml-form-embedSubmit button.primary{
+  width: 100% !important;
+  height: 56px;
+
+  border-radius: 14px !important;
+  border: 1px solid rgba(0,0,0,0.15) !important;
+
+  background: var(--accent, #CC5500) !important;
+  color: #ffffff !important;
+
+  font-weight: 800 !important;
+  letter-spacing: 0.01em;
+
+  box-shadow: 0 10px 22px rgba(0,0,0,0.30);
+}
+
+.newsletter-embed .ml-form-embedSubmit button.primary:hover{
+  filter: brightness(1.04);
+}
+
+/* Success state */
+.newsletter-embed .ml-form-successBody{
+  background: transparent !important;
+  padding: 0 !important;
+}
+.newsletter-embed .ml-form-successBody h4,
+.newsletter-embed .ml-form-successBody p{
+  color: #ffffff !important;
+}
 
 /* ────── FOOTER ────── */
 .site-footer { border-top: 1px solid var(--border); padding: 60px 0 20px; margin-top: 40px; font-size: 0.9rem; color: var(--muted); }
