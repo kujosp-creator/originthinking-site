@@ -239,6 +239,35 @@ a:hover { color: #ff7b1c; }
   border: 1px solid rgba(255,255,255,0.10);
   backdrop-filter: blur(10px);
 }
+/* Newsletter: ensure readable text on the white MailerLite card */
+.newsletter-embed .ml-form-embedWrapper.embedForm{
+  background:#ffffff;
+  border-radius:16px;
+}
+
+/* Force heading + copy to dark text (MailerLite sometimes injects light/opacity styles) */
+.newsletter-embed .ml-form-embedContent h4{
+  color:#0F1113 !important;
+  opacity:1 !important;
+  margin:0 0 6px 0;
+}
+
+.newsletter-embed .ml-form-embedContent p{
+  color:#3A3F45 !important;
+  opacity:1 !important;
+  margin:0 0 14px 0;
+}
+
+/* Optional: make placeholder readable if you keep a dark input */
+.newsletter-embed .ml-form-fieldRow input::placeholder{
+  color:rgba(255,255,255,0.75);
+}
+
+/* Optional: better focus visibility (accessibility) */
+.newsletter-embed .ml-form-fieldRow input:focus{
+  outline:2px solid rgba(204,85,0,0.6);
+  outline-offset:2px;
+}
 
 /* Make text readable (your screenshot shows white text on white background) */
 .newsletter-embed .ml-form-embedContent h4 {
