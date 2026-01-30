@@ -31,7 +31,7 @@
   function initSite() {
     jumpToSlug();
 
-    // --- Strict Filter Logic (all steps behave the same) ---
+    // Strict filter logic (all steps behave the same)
     const chips = document.querySelectorAll('.chip');
     const cards = document.querySelectorAll('.card');
     const toolGrid = document.getElementById('toolGrid');
@@ -95,7 +95,7 @@
       });
     }
 
-    // --- Mobile Menu ---
+    // Mobile menu
     const toggle = document.querySelector('.menu-toggle');
     const nav = document.querySelector('.main-nav');
 
