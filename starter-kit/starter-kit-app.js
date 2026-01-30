@@ -23,7 +23,7 @@
         }
       }
     } catch(e) {
-      /* ignore bad URLs, etc. */
+      /* ignore */
     }
   }
 
@@ -31,9 +31,56 @@
   function initSite() {
     jumpToSlug();
 
-    // --- Strict Filter Logic ---
+    // --- Strict Filter Logic (all steps behave the same) ---
     const chips = document.querySelectorAll('.chip');
     const cards = document.querySelectorAll('.card');
+    const toolGrid = document.getElementById('toolGrid');
+
+    // Preserve original DOM order
+    if (toolGrid && cards.length > 0) {
+      Array.prototype.forEach.call(cards, function(card, idx) {
+        if (!card.dataset.origIndex) {
+          card.dataset.origIndex = String(idx);
+        }
+      });
+    }
+
+    function restoreOriginalOrder() {
+      if (!toolGrid) return;
+      const ordered = Array.prototype.slice.call(cards).sort(function(a, b) {
+        const ai = parseInt(a.dataset.origIndex || '0', 10);
+        const bi = parseInt(b.dataset.origIndex || '0', 10);
+        return ai - bi;
+      });
+      ordered.forEach(function(card) {
+        toolGrid.appendChild(card);
+      });
+    }
+
+    function setActiveChip(activeChip) {
+      chips.forEach(function(c) {
+        c.removeAttribute('data-active');
+        c.setAttribute('aria-pressed', 'false');
+      });
+      activeChip.setAttribute('data-active', 'true');
+      activeChip.setAttribute('aria-pressed', 'true');
+    }
+
+    function applyFilter(selectedStep) {
+      restoreOriginalOrder();
+
+      if (selectedStep === 'all') {
+        cards.forEach(function(card) {
+          card.style.display = 'flex';
+        });
+        return;
+      }
+
+      // Strict filter: primary step only (Step 7 included)
+      cards.forEach(function(card) {
+        card.style.display = (card.getAttribute('data-step') === selectedStep) ? 'flex' : 'none';
+      });
+    }
 
     if (chips.length > 0 && cards.length > 0) {
       chips.forEach(function(chip){
@@ -42,26 +89,8 @@
           const selectedStep = this.getAttribute('data-step');
           if (!selectedStep) return;
 
-          // Visual update
-          chips.forEach(function(c) {
-            c.removeAttribute('data-active');
-            c.setAttribute('aria-pressed', 'false');
-          });
-          this.setAttribute('data-active', 'true');
-          this.setAttribute('aria-pressed', 'true');
-
-          // Card filtering (strict mode on primary step)
-          cards.forEach(function(card) {
-            if (selectedStep === 'all') {
-              card.style.display = 'flex';
-            } else {
-              if (card.getAttribute('data-step') === selectedStep) {
-                card.style.display = 'flex';
-              } else {
-                card.style.display = 'none';
-              }
-            }
-          });
+          setActiveChip(this);
+          applyFilter(selectedStep);
         });
       });
     }
@@ -89,21 +118,16 @@
         e.stopPropagation();
         e.preventDefault();
         const isOpen = nav.classList.contains('is-open');
-        if (isOpen) {
-          closeNav();
-        } else {
-          openNav();
-        }
+        if (isOpen) closeNav();
+        else openNav();
       });
 
-      // Close when clicking any nav link
       nav.querySelectorAll('a').forEach(function(link) {
         link.addEventListener('click', function() {
           closeNav();
         });
       });
 
-      // Close on Escape for accessibility
       document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && nav.classList.contains('is-open')) {
           closeNav();
@@ -119,3 +143,4 @@
   }
 
 })();
+
