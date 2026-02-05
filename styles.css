@@ -91,7 +91,7 @@ a:hover { color: #ff7b1c; }
 .hero-sub {
   font-size: 1.2rem; color: var(--muted); margin: 0 0 32px; max-width: 500px;
 }
-.cta-group { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 24px; align-items: stretch; }
+.cta-group { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 24px; }
 .trust-note { font-size: 0.9rem; color: var(--muted); display: flex; gap: 8px; align-items: center; }
 .star-rating { color: #fbbf24; letter-spacing: 2px; }
 
@@ -156,23 +156,6 @@ a:hover { color: #ff7b1c; }
 .btn.secondary:hover { border-color: var(--accent); color: #fff; }
 .btn.youtube { background: #cc0000; color: #fff; }
 .btn.facebook { background: #1877f2; color: #fff; }
-/* Hero CTA sizing: keep buttons symmetrical in the hero */
-.cta-group .btn.big { flex: 1 1 180px; }
-
-/* Etsy CTA (E-Ink Tools) */
-.btn.etsy {
-  background: rgba(241, 100, 30, 0.14);
-  border: 1px solid rgba(241, 100, 30, 0.65);
-  color: #fff;
-}
-.btn.etsy:hover {
-  background: rgba(241, 100, 30, 0.22);
-  border-color: #F1641E;
-  transform: translateY(-1px);
-}
-.btn .btn-icon { display: inline-flex; margin-right: 8px; }
-.btn .etsy-icon { fill: currentColor; display: block; }
-
 
 /* ────── JDI TOOL ────── */
 .jdi-card { cursor: pointer; display: block; position: relative; }
@@ -1317,4 +1300,28 @@ body.theme-halloween::before {
 }
   /* Subtext stays hidden on mobile */
   .ot-assistant-btn .ot-assistant-subtext { display: none !important; }
+}
+
+
+/* Etsy CTA (Hero) */
+.btn-icon { display: inline-flex; align-items: center; justify-content: center; margin-right: 10px; }
+.btn-icon svg { width: 18px; height: 18px; fill: currentColor; display: block; }
+
+.btn.etsy {
+  border-color: #CC5500;
+  color: #fff;
+  background: rgba(204, 85, 0, 0.18);
+}
+.btn.etsy:hover { background: rgba(204, 85, 0, 0.28); transform: translateY(-1px); }
+.btn.etsy:active { transform: translateY(0); }
+.btn.etsy:focus-visible { outline: 2px solid #CC5500; outline-offset: 3px; }
+
+/* Keep hero CTAs visually symmetric */
+.cta-group { align-items: stretch; }
+.cta-group .btn.big { flex: 1 1 220px; }
+
+/* Mobile CTA stack */
+@media (max-width: 520px) {
+  .cta-group { flex-direction: column; }
+  .cta-group .btn.big { width: 100%; }
 }
