@@ -91,7 +91,10 @@ a:hover { color: #ff7b1c; }
 .hero-sub {
   font-size: 1.2rem; color: var(--muted); margin: 0 0 32px; max-width: 500px;
 }
-.cta-group { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 24px; }
+.cta-group { display: flex; gap: 16px; flex-wrap: wrap; align-items: stretch; margin-bottom: 24px; }
+/* Keep hero CTA buttons evenly sized */
+.cta-group .btn.big { flex: 1 1 180px; min-width: 180px; }
+
 .trust-note { font-size: 0.9rem; color: var(--muted); display: flex; gap: 8px; align-items: center; }
 .star-rating { color: #fbbf24; letter-spacing: 2px; }
 
@@ -148,6 +151,26 @@ a:hover { color: #ff7b1c; }
   cursor: pointer;
 }
 .btn.big { padding: 14px 28px; font-size: 1.1rem; }
+/* CTA icon helper (used by Etsy button in hero) */
+.btn-icon { display: inline-flex; align-items: center; justify-content: center; margin-right: 10px; line-height: 0; }
+.btn-icon svg { display: block; }
+
+/* Etsy CTA: noticeable but consistent with OPS palette */
+.btn.etsy {
+  background: rgba(204, 85, 0, 0.14);
+  border-color: rgba(204, 85, 0, 0.85);
+  color: var(--fg);
+  box-shadow: 0 0 0 1px rgba(204, 85, 0, 0.18), 0 10px 24px rgba(0,0,0,0.35);
+}
+.btn.etsy:hover,
+.btn.etsy:focus-visible {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #0b0d10;
+  transform: translateY(-1px);
+  box-shadow: 0 0 0 4px rgba(204, 85, 0, 0.22), 0 16px 34px rgba(0,0,0,0.45);
+}
+
 .btn.primary { background: var(--accent); color: #fff; box-shadow: 0 4px 12px rgba(204,85,0,0.3); }
 .btn.primary:hover { background: #e06000; transform: translateY(-1px); box-shadow: 0 6px 16px rgba(204,85,0,0.4); }
 
@@ -1303,25 +1326,10 @@ body.theme-halloween::before {
 }
 
 
-/* Etsy CTA (Hero) */
-.btn-icon { display: inline-flex; align-items: center; justify-content: center; margin-right: 10px; }
-.btn-icon svg { width: 18px; height: 18px; fill: currentColor; display: block; }
 
-.btn.etsy {
-  border-color: #CC5500;
-  color: #fff;
-  background: rgba(204, 85, 0, 0.18);
-}
-.btn.etsy:hover { background: rgba(204, 85, 0, 0.28); transform: translateY(-1px); }
-.btn.etsy:active { transform: translateY(0); }
-.btn.etsy:focus-visible { outline: 2px solid #CC5500; outline-offset: 3px; }
-
-/* Keep hero CTAs visually symmetric */
-.cta-group { align-items: stretch; }
-.cta-group .btn.big { flex: 1 1 220px; }
-
-/* Mobile CTA stack */
 @media (max-width: 520px) {
-  .cta-group { flex-direction: column; }
-  .cta-group .btn.big { width: 100%; }
+  /* Hero CTAs: one primary row, two secondary buttons below, both equal width */
+  .cta-group { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .cta-group .btn.big { width: 100%; min-width: 0; }
+  .cta-group .btn.big:nth-child(1) { grid-column: 1 / -1; justify-self: center; max-width: 320px; }
 }
